@@ -45,20 +45,20 @@ test('site data targets Quebec City CMA gutter services in Quebec French', () =>
 
 test('homepage contains localized hero, climate pitch, services overview and CTA', () => {
   const home = read('src/pages/index.astro');
-  assert.match(home, /Expert en gouttières à Québec et Lévis/);
-  assert.match(home, /climat de Québec/i);
+  assert.match(home, /Nettoyage et installation de gouttières à Québec/);
+  assert.match(home, /Québec/i);
   assert.match(home, /neige/);
   assert.match(home, /glace/);
   assert.match(home, /gel-dégel/);
-  assert.match(home, /Soumission gratuite/);
-  assert.match(home, /Installation de gouttières sans joints/);
-  assert.match(home, /Nettoyage professionnel de gouttières/);
-  assert.match(home, /Protection pare-feuilles/);
+  assert.match(home, /soumission/i);
+  assert.match(home, /Installer de nouvelles gouttières/);
+  assert.match(home, /Nettoyer mes gouttières/);
+  assert.match(home, /Ajouter des pare-feuilles/);
   assert.match(home, /infiltration d’eau/i);
   assert.match(home, /fondations/);
   assert.match(home, /toiture/);
   assert.match(home, /gouttières en aluminium sans joints/);
-  assert.match(home, /système de crochets continus/);
+  assert.match(home, /système de crochets continus/i);
   assert.match(home, /Alu-Rex T-Rex/);
   assert.match(home, /DoublePro/);
   assert.match(home, /50\s*% plus robustes/);
@@ -118,22 +118,36 @@ test('visual system feels premium and modern instead of generic template-like', 
     '--gradient-aurora',
     'backdrop-filter',
     'noise-overlay',
-    'orbital-card',
+    'gutter-photo-scene',
+    'roofline-illustration',
     'metric-card',
-    'marquee-track',
+    'service-selector',
   ]) {
     assert.match(layout + home, new RegExp(token), `${token} should be present in the visual system`);
   }
 
-  assert.match(home, /hero-visual/);
-  assert.match(home, /climate-dashboard/);
-  assert.match(home, /service-card featured/);
-  assert.match(home, /process-timeline/);
+  assert.match(home, /gutter-photo-scene/);
+  assert.match(home, /before-after-gutters/);
+  assert.match(home, /featured-trade-card/);
+  assert.match(home, /trade-process/);
   assert.match(home, /area-grid/);
-  assert.match(serviceTemplate, /service-hero-visual/);
-  assert.match(serviceTemplate, /sticky-quote-card/);
+  assert.match(serviceTemplate, /gutter-service-visual/);
+  assert.match(serviceTemplate, /trade-quote-card/);
 
   assert.doesNotMatch(layout, /border-radius:\s*24px|border-radius:\s*30px/);
+});
+
+test('homepage visually communicates gutter services, not an abstract SaaS dashboard', () => {
+  const home = read('src/pages/index.astro');
+  assert.match(home, /gutter-photo-scene/);
+  assert.match(home, /roofline-illustration/);
+  assert.match(home, /before-after-gutters/);
+  assert.match(home, /service-selector/);
+  assert.match(home, /Nettoyer mes gouttières/);
+  assert.match(home, /Installer de nouvelles gouttières/);
+  assert.match(home, /Ajouter des pare-feuilles/);
+  assert.match(home, /Échelle/);
+  assert.match(home, /Débris/);
 });
 
 test('robots file points to quebec-gouttieres.ca sitemap', () => {

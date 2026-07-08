@@ -9,12 +9,13 @@ export function getStaticPaths() {
 
 const { page } = Astro.props;
 const paragraphs = page.body.split('\n\n');
+const serviceLabel = page.slug.includes('nettoyage') ? 'Nettoyage de gouttières' : page.slug.includes('pare-feuilles') ? 'Pare-feuilles' : 'Installation sans joints';
 ---
 <BaseLayout title={page.title} description={page.metaDescription} canonicalPath={`/${page.slug}/`}>
-  <section class="service-hero">
+  <section class="service-hero trade-service-hero">
     <div class="container service-hero-grid">
       <div>
-        <p class="eyebrow">Québec, Lévis et Rive-Sud</p>
+        <p class="eyebrow">{serviceLabel} — Québec, Lévis et Rive-Sud</p>
         <h1>{page.h1}</h1>
         <p class="lead">{page.intro}</p>
         <div class="hero-actions">
@@ -22,9 +23,14 @@ const paragraphs = page.body.split('\n\n');
           <a class="btn secondary" href="/#services">Tous les services</a>
         </div>
       </div>
-      <div class="service-hero-visual orbital-card" aria-label="Résumé de service">
-        <div class="visual-topline"><span>Protection résidentielle</span><b>Québec</b></div>
-        <div class="service-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="service-hero-visual gutter-service-visual" aria-label="Illustration du service de gouttières">
+        <div class="service-roofline">
+          <span class="service-badge">{serviceLabel}</span>
+          <div class="roof-strip"></div>
+          <div class="service-gutter"><i></i></div>
+          <div class="service-downspout"></div>
+          <div class="service-tools"><span>Échelle</span><b>Inspection</b></div>
+        </div>
         <div class="visual-metrics">
           <div class="metric-card"><small>Climat</small><strong>Gel</strong><span>dégel répété</span></div>
           <div class="metric-card"><small>Système</small><strong>Sans</strong><span>joints visibles</span></div>
@@ -40,14 +46,14 @@ const paragraphs = page.body.split('\n\n');
           <p class={index === 0 ? 'opening-paragraph' : undefined}>{paragraph}</p>
         ))}
       </article>
-      <aside class="sticky-quote-card orbital-card">
-        <p class="eyebrow">Solution recommandée</p>
-        <h2>Un système complet, pas une réparation temporaire</h2>
+      <aside class="sticky-quote-card trade-quote-card">
+        <p class="eyebrow">Besoin concret</p>
+        <h2>Nettoyer, remplacer ou protéger vos gouttières</h2>
         <ul class="feature-list">
           <li>Évaluation du drainage et des zones à risque</li>
           <li>Recommandations adaptées au climat de Québec</li>
           <li>Options de gouttières sans joints, nettoyage et pare-feuilles</li>
-          <li>Installation sécuritaire par une équipe expérimentée</li>
+          <li>Travail sécuritaire autour de la toiture et des descentes</li>
           <li>Soumission gratuite dans la grande région de Québec</li>
         </ul>
         <a class="btn" href={`mailto:${site.email}?subject=${encodeURIComponent(page.cta)}`}>{page.cta}</a>
@@ -69,27 +75,27 @@ const paragraphs = page.body.split('\n\n');
   </section>
 
   <style>
-    .service-hero { padding-top: clamp(72px, 9vw, 124px); }
-    .service-hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr); gap: clamp(32px, 7vw, 78px); align-items: center; }
+    .trade-service-hero { padding-top: clamp(58px, 7vw, 100px); background: linear-gradient(180deg, #eef8ff, #fff); }
+    .service-hero-grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(340px, .82fr); gap: clamp(32px, 7vw, 78px); align-items: center; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .service-hero-visual { position: relative; min-height: 410px; padding: 26px; overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,.76), rgba(233,251,255,.82)); }
-    .service-hero-visual::before { content: ""; position: absolute; inset: -22% -28% auto auto; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(83,58,253,.26), transparent 66%); }
-    .visual-topline { display: flex; justify-content: space-between; gap: 14px; color: var(--muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
-    .visual-topline b { color: var(--brand); }
-    .service-rings { position: relative; height: 220px; display: grid; place-items: center; }
-    .service-rings i { position: absolute; border-radius: 50%; border: 1px solid rgba(83,58,253,.18); }
-    .service-rings i:nth-child(1) { width: 210px; height: 210px; background: radial-gradient(circle, rgba(45,212,191,.26), transparent 58%); }
-    .service-rings i:nth-child(2) { width: 138px; height: 138px; border-color: rgba(45,212,191,.36); }
-    .service-rings i:nth-child(3) { width: 58px; height: 58px; background: linear-gradient(135deg, var(--brand), var(--teal-bright)); box-shadow: rgba(83,58,253,.34) 0 22px 44px -18px; }
+    .gutter-service-visual { min-height: 410px; padding: 22px; overflow: hidden; background: linear-gradient(160deg, #dff3ff, #ffffff 52%, #f7fbf8); border: 1px solid #d7e7ef; border-radius: 22px; box-shadow: var(--shadow-premium); }
+    .service-roofline { position: relative; min-height: 268px; border-radius: 16px; overflow: hidden; background: linear-gradient(180deg, #d9edf8 0 48%, #efe1cf 48% 100%); margin-bottom: 16px; }
+    .service-badge { position: absolute; left: 18px; top: 18px; z-index: 5; padding: 8px 12px; border-radius: 999px; background: white; color: #0b243d; font-weight: 900; font-size: .85rem; box-shadow: var(--shadow-soft); }
+    .roof-strip { position: absolute; left: 18px; right: 18px; top: 104px; height: 74px; background: linear-gradient(135deg, #24364d, #12243a); clip-path: polygon(0 70%, 55% 0, 100% 52%, 100% 100%, 0 100%); }
+    .service-gutter { position: absolute; left: 38px; right: 44px; top: 174px; height: 22px; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #f7fbff, #a7bac7); border: 1px solid #8196a4; box-shadow: 0 13px 22px rgba(6,27,49,.16); }
+    .service-gutter i { position: absolute; left: 20px; right: 46px; top: 7px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, #38bdf8, #22d3ee); }
+    .service-downspout { position: absolute; right: 54px; top: 194px; width: 22px; height: 74px; background: linear-gradient(90deg, #d9e4eb, #9eb2bf); border: 1px solid #879aa7; border-radius: 0 0 10px 10px; }
+    .service-tools { position: absolute; left: 26px; bottom: 18px; display: flex; gap: 10px; align-items: center; }
+    .service-tools span, .service-tools b { padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,.9); color: var(--ink-2); font-size: .82rem; box-shadow: var(--shadow-soft); }
     .visual-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
     .service-content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 28px; align-items: start; }
     .service-copy { padding: clamp(28px, 4vw, 48px); }
     .service-copy p { font-size: 1.12rem; line-height: 1.72; }
     .service-copy .opening-paragraph { color: var(--ink-2); font-size: 1.24rem; }
-    .sticky-quote-card { position: sticky; top: 96px; padding: 26px; }
-    .sticky-quote-card h2 { font-size: 2rem; }
-    .sticky-quote-card .btn { margin-top: 26px; width: 100%; }
-    @media (max-width: 960px) { .service-hero-grid, .service-content-grid { grid-template-columns: 1fr; } .sticky-quote-card { position: relative; top: 0; } }
+    .trade-quote-card { position: sticky; top: 96px; padding: 26px; border-radius: 18px; background: #fff; border: 1px solid #dbe8ef; box-shadow: rgba(15, 59, 94, .08) 0 18px 38px; }
+    .trade-quote-card h2 { font-size: 2rem; }
+    .trade-quote-card .btn { margin-top: 26px; width: 100%; }
+    @media (max-width: 960px) { .service-hero-grid, .service-content-grid { grid-template-columns: 1fr; } .trade-quote-card { position: relative; top: 0; } }
     @media (max-width: 560px) { .visual-metrics { grid-template-columns: 1fr; } }
   </style>
 </BaseLayout>

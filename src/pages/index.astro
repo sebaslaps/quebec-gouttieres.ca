@@ -3,86 +3,122 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../data/site.json';
 ---
 <BaseLayout title={site.title} description={site.metaDescription} canonicalPath="/">
-  <section class="hero modern-hero">
+  <section class="hero gutter-hero">
     <div class="container hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Gouttières résidentielles — Québec, Lévis et Rive-Sud</p>
-        <h1>Expert en gouttières à Québec et Lévis</h1>
-        <p class="lead">Installation de gouttières en aluminium sans joints, nettoyage professionnel et pare-feuilles microfiltrants pour protéger votre maison contre le climat de Québec : neige lourde, glace, barrages de glace et cycles de gel-dégel.</p>
+        <h1>Nettoyage et installation de gouttières à Québec</h1>
+        <p class="lead">Besoin de faire nettoyer vos gouttières, remplacer un vieux système qui coule ou installer des gouttières sans joints? On vous aide à choisir rapidement la bonne solution pour protéger votre toiture, vos fascias et vos fondations contre l’eau, la neige, la glace et le gel-dégel.</p>
         <div class="hero-actions">
-          <a class="btn" href={`mailto:${site.email}?subject=Soumission gratuite - gouttières Québec`}>Soumission gratuite</a>
-          <a class="btn secondary" href="#services">Explorer les services</a>
+          <a class="btn" href={`mailto:${site.email}?subject=Soumission gratuite - gouttières Québec`}>Demander une soumission</a>
+          <a class="btn secondary" href="#services">Choisir mon service</a>
         </div>
         <div class="trust-row" aria-label="Arguments clés">
-          <span>Sans joints</span>
-          <span>5 et 6 pouces</span>
+          <span>Nettoyage sécuritaire</span>
+          <span>Installation sans joints 5 et 6 pouces</span>
           <span>Pare-feuilles microfiltrants</span>
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="Aperçu visuel de protection des gouttières">
-        <div class="orbital-card main-gutter-card">
-          <div class="mini-roof">
-            <span></span>
-            <strong>Gouttière continue</strong>
+      <div class="gutter-photo-scene" aria-label="Illustration d'une maison avec gouttière, échelle et écoulement d'eau">
+        <div class="roofline-illustration">
+          <div class="sky-label">Maison résidentielle</div>
+          <div class="roof-snow"></div>
+          <div class="roof"></div>
+          <div class="fascia"></div>
+          <div class="gutter-channel"><span></span></div>
+          <div class="downspout"></div>
+          <div class="house-wall">
+            <i></i><i></i><i></i>
           </div>
-          <div class="water-flow" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="metric-grid">
-            <div class="metric-card">
-              <small>Résistance</small>
-              <strong>250–425</strong>
-              <span>lb / pied linéaire</span>
-            </div>
-            <div class="metric-card">
-              <small>Robustesse</small>
-              <strong>+50%</strong>
-              <span>avec crochets continus</span>
-            </div>
-          </div>
+          <div class="ladder"><span>Échelle</span></div>
+          <div class="debris-bag">Débris</div>
+          <div class="water-drops" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
-        <div class="climate-dashboard orbital-card">
-          <div class="dashboard-head">
-            <span>Simulation climat Québec</span>
-            <b>hiver actif</b>
-          </div>
-          <div class="weather-bars" aria-hidden="true"><i style="height:44%"></i><i style="height:78%"></i><i style="height:58%"></i><i style="height:86%"></i><i style="height:64%"></i></div>
-          <p>Neige lourde, glace et gel-dégel exigent un système rigide, étanche et bien ancré.</p>
+        <div class="scene-card urgent-card">
+          <strong>Vos gouttières débordent?</strong>
+          <span>Nettoyage avant infiltration d’eau, glace ou dommages aux fondations.</span>
+        </div>
+        <div class="scene-metrics" aria-label="Mesures de performance">
+          <div class="metric-card"><small>Renfort</small><strong>+50%</strong><span>plus robustes</span></div>
+          <div class="metric-card"><small>Charge</small><strong>250–425</strong><span>lb / pied linéaire</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="marquee-section" aria-label="Services rapides">
-    <div class="container marquee-track light">
-      <span>Installation sans joints</span><span>Nettoyage saisonnier</span><span>Alu-Rex T-Rex</span><span>DoublePro</span><span>Microfiltration</span><span>Québec & Lévis</span>
-    </div>
-  </section>
-
-  <section id="services">
+  <section class="service-selector-section" id="services">
     <div class="container">
-      <div class="section-heading">
-        <p class="eyebrow">Services essentiels</p>
-        <h2>Un système complet pour évacuer l’eau avant qu’elle devienne un problème</h2>
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Choisissez votre besoin</p>
+          <h2>Quel service de gouttières cherchez-vous?</h2>
+        </div>
+        <p>Trouvez rapidement la bonne solution selon votre situation : gouttières bouchées, vieux système qui coule ou entretien trop fréquent autour des arbres.</p>
       </div>
-      <div class="grid three services-grid">
-        <article class="service-card featured">
-          <span class="service-number">01</span>
-          <h3>Installation de gouttières sans joints</h3>
-          <p>Nous installons des gouttières en aluminium sans joints de 5 et 6 pouces, fabriquées sur mesure pour votre toiture. Comme les joints sont la première cause de fuites, de rouille et d’affaissement, le système continu réduit les points faibles et évacue l’eau plus efficacement loin des fondations.</p>
-          <a class="service-link" href="/installation-gouttieres-sans-joints/">Voir l’installation →</a>
-        </article>
-        <article class="service-card">
-          <span class="service-number">02</span>
-          <h3>Nettoyage professionnel de gouttières</h3>
-          <p>Les feuilles, aiguilles, granules de bardeaux et débris bloquent l’écoulement et préparent le terrain aux poches de glace. Notre nettoyage sécuritaire aide à prévenir les débordements, l’infiltration d’eau au toit et l’humidité autour des fondations avant les pluies froides et la neige.</p>
+
+      <div class="service-selector">
+        <article class="trade-service-card clean-card">
+          <div class="service-icon gutter-icon cleaning-icon" aria-hidden="true"><span></span></div>
+          <p class="service-label">Gouttières bouchées</p>
+          <h3>Nettoyer mes gouttières</h3>
+          <p>Feuilles, aiguilles, granules de bardeaux et débris bloquent l’écoulement. Le nettoyage professionnel réduit les débordements, les poches de glace et l’eau qui descend vers les fondations.</p>
+          <ul>
+            <li>Nettoyage sécuritaire en hauteur</li>
+            <li>Déblocage des descentes pluviales</li>
+            <li>Idéal avant l’automne ou les gels</li>
+          </ul>
           <a class="service-link" href="/nettoyage-gouttieres/">Voir le nettoyage →</a>
         </article>
-        <article class="service-card">
-          <span class="service-number">03</span>
-          <h3>Protection pare-feuilles</h3>
-          <p>Nos pare-feuilles microfiltrants, incluant des solutions de type Alu-Rex T-Rex et DoublePro, bloquent les débris tout en renforçant la gouttière. Avec un système de crochets continus, vos gouttières résistent mieux au poids de la glace, de la neige et même à l’appui d’une échelle.</p>
+
+        <article class="trade-service-card install-card featured-trade-card">
+          <div class="service-icon gutter-icon install-icon" aria-hidden="true"><span></span></div>
+          <p class="service-label">Vieux système qui coule</p>
+          <h3>Installer de nouvelles gouttières</h3>
+          <p>Gouttières en aluminium sans joints de 5 et 6 pouces, fabriquées sur mesure pour limiter les fuites, la rouille et les affaissements aux endroits vulnérables.</p>
+          <ul>
+            <li>Gouttières continues sans joints</li>
+            <li>Pentes et descentes bien positionnées</li>
+            <li>Finition propre adaptée à la maison</li>
+          </ul>
+          <a class="service-link" href="/installation-gouttieres-sans-joints/">Voir l’installation →</a>
+        </article>
+
+        <article class="trade-service-card guard-card">
+          <div class="service-icon gutter-icon guard-icon" aria-hidden="true"><span></span></div>
+          <p class="service-label">Trop d’entretien</p>
+          <h3>Ajouter des pare-feuilles</h3>
+          <p>Les pare-feuilles microfiltrants de type Alu-Rex T-Rex et DoublePro aident à bloquer les débris tout en renforçant la gouttière contre la neige et la glace.</p>
+          <ul>
+            <li>Microfiltration contre feuilles et aiguilles</li>
+            <li>Système de crochets continus plus robustes</li>
+            <li>Système pouvant approcher 30 ans de durée de vie</li>
+          </ul>
           <a class="service-link" href="/pare-feuilles/">Voir les pare-feuilles →</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="before-after-section">
+    <div class="container grid two">
+      <div>
+        <p class="eyebrow">Avant / après</p>
+        <h2>Une gouttière bouchée devient vite un problème de maison</h2>
+        <p>Quand l’eau déborde, elle ne reste pas dans la gouttière : elle coule derrière le fascia, éclabousse le revêtement, s’accumule au pied des fondations et peut geler en bordure de toiture. À Québec, les cycles de gel-dégel aggravent rapidement la situation.</p>
+        <p>Une gouttière propre, bien inclinée et solidement ancrée dirige l’eau vers les descentes pluviales au lieu de la laisser attaquer votre maison.</p>
+      </div>
+      <div class="before-after-gutters" aria-label="Comparaison gouttière bouchée et gouttière propre">
+        <div class="before-panel">
+          <strong>Avant</strong>
+          <span>Feuilles, débris, débordements</span>
+          <div class="mini-gutter clogged"><i></i><i></i><i></i></div>
+        </div>
+        <div class="after-panel">
+          <strong>Après</strong>
+          <span>Écoulement clair vers la descente</span>
+          <div class="mini-gutter clean"><i></i><i></i><i></i></div>
+        </div>
       </div>
     </div>
   </section>
@@ -91,32 +127,32 @@ import site from '../data/site.json';
     <div class="container grid two">
       <div>
         <p class="eyebrow">Pourquoi agir maintenant</p>
-        <h2>Ignorer vos gouttières peut coûter beaucoup plus qu’une installation bien faite</h2>
-        <p>Quand une gouttière déborde ou se déforme, l’eau ne disparaît pas : elle descend derrière le fascia, remonte sous les bardeaux, éclabousse le revêtement et s’accumule au pied des fondations. À Québec, les cycles de gel-dégel aggravent rapidement ces problèmes, car l’eau coincée prend de l’expansion, force les joints et crée des barrages de glace.</p>
-        <p>La solution durable consiste à réduire les points faibles. Les gouttières en aluminium sans joints limitent les fuites, tandis que le système de crochets continus renforce toute la longueur de la gouttière. Les produits premium de type Alu-Rex T-Rex et DoublePro peuvent rendre le système 50 % plus robustes et supporter de 250 à 425 lb par pied linéaire selon la configuration.</p>
+        <h2>Ne laissez pas vos gouttières décider du prochain dégât d’eau</h2>
+        <p>Les joints, les descentes obstruées, les gouttières affaissées et les fixations fatiguées sont souvent les premiers signes d’un système qui ne suit plus. Les gouttières en aluminium sans joints réduisent les points faibles, tandis que les crochets continus et les pare-feuilles renforcent toute la longueur de la gouttière.</p>
+        <p>Les systèmes premium de type Alu-Rex T-Rex et DoublePro peuvent rendre vos gouttières 50 % plus robustes et supporter de 250 à 425 lb par pied linéaire selon la configuration.</p>
       </div>
-      <div class="risk-panel orbital-card">
-        <div class="risk-item"><strong>Fondations</strong><span>Éloigne l’eau des zones sensibles autour de la maison.</span></div>
-        <div class="risk-item"><strong>Toiture</strong><span>Réduit les risques d’infiltrations causées par la glace.</span></div>
-        <div class="risk-item"><strong>Fascias</strong><span>Limite l’humidité persistante et le gauchissement.</span></div>
-        <div class="risk-item"><strong>Durabilité</strong><span>Durée de vie pouvant approcher près de 30 ans.</span></div>
+      <div class="risk-panel trade-risk-panel">
+        <div class="risk-item"><strong>Toiture</strong><span>Moins de risques d’eau qui remonte sous les bardeaux.</span></div>
+        <div class="risk-item"><strong>Fascias</strong><span>Réduit l’humidité persistante et le gauchissement.</span></div>
+        <div class="risk-item"><strong>Fondations</strong><span>Éloigne l’eau du sol autour de la maison.</span></div>
+        <div class="risk-item"><strong>Hiver</strong><span>Meilleure résistance à la neige lourde et à la glace.</span></div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="process-section">
     <div class="container grid two">
-      <div class="process-timeline">
-        <div><span>01</span><strong>Diagnostic</strong><p>Toiture, pente, descentes, arbres, accumulation de neige.</p></div>
-        <div><span>02</span><strong>Fabrication</strong><p>Gouttières continues en aluminium 5 ou 6 pouces selon le besoin.</p></div>
-        <div><span>03</span><strong>Renforcement</strong><p>Système de crochets continus et pare-feuilles microfiltrants.</p></div>
-        <div><span>04</span><strong>Vérification</strong><p>Écoulement, finition, zones à risque et conseils d’entretien.</p></div>
+      <div class="process-timeline trade-process">
+        <div><span>01</span><strong>Inspection des gouttières</strong><p>On vérifie les pentes, les descentes, les joints, les arbres et les zones où l’eau déborde.</p></div>
+        <div><span>02</span><strong>Recommandation claire</strong><p>Nettoyage, remplacement sans joints ou pare-feuilles selon l’état réel du système.</p></div>
+        <div><span>03</span><strong>Travail sécuritaire</strong><p>Échelle, accès en hauteur, protection du terrain et finition propre autour de la maison.</p></div>
+        <div><span>04</span><strong>Écoulement vérifié</strong><p>On valide que l’eau quitte la toiture et s’éloigne des fondations.</p></div>
       </div>
       <div>
         <p class="eyebrow">Expérience et sécurité</p>
-        <h2>Une installation impeccable par des professionnels certifiés et expérimentés</h2>
-        <p>Une gouttière performante dépend autant du produit que de l’installation. Notre équipe travaille de façon méthodique : prise de mesures, fabrication continue, positionnement des descentes, pente d’écoulement, ancrage et inspection finale. Chaque détail vise une évacuation stable et une finition propre.</p>
-        <p>Nous mettons l’accent sur la sécurité en hauteur, la protection de votre propriété et la durabilité du résultat. Vous obtenez une recommandation claire, sans pression, selon votre toiture, votre quartier, la présence d’arbres et l’exposition au vent.</p>
+        <h2>Un service de gouttières concret, pas une page générique</h2>
+        <p>Une gouttière performante dépend autant du produit que de l’installation. Notre approche vise les problèmes visibles d’un propriétaire : gouttière bouchée, débordement, rouille, joint qui coule, descente mal placée, accumulation de glace ou entretien trop fréquent.</p>
+        <p>Vous obtenez une recommandation simple selon votre toiture, votre quartier, la présence d’arbres matures, la neige et les redoux hivernaux dans la grande région de Québec.</p>
       </div>
     </div>
   </section>
@@ -134,10 +170,10 @@ import site from '../data/site.json';
 
   <section>
     <div class="container">
-      <div class="cta-band">
+      <div class="cta-band trade-cta-band">
         <div>
-          <p class="eyebrow">Protégez votre maison</p>
-          <h2>Prêt à remplacer, nettoyer ou renforcer vos gouttières?</h2>
+          <p class="eyebrow">Nettoyer, installer ou protéger</p>
+          <h2>Décrivez votre problème de gouttières et recevez une recommandation</h2>
           <p>Demandez une soumission gratuite pour une solution adaptée à votre maison, votre toiture et votre secteur dans la région de Québec.</p>
         </div>
         <a class="btn" href={`mailto:${site.email}?subject=Soumission gratuite - quebec-gouttieres.ca`}>Soumission gratuite</a>
@@ -146,54 +182,87 @@ import site from '../data/site.json';
   </section>
 
   <style>
-    .modern-hero { padding-top: clamp(72px, 9vw, 132px); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .85fr); gap: clamp(36px, 7vw, 82px); align-items: center; }
-    .hero-copy h1 { margin-bottom: 24px; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin: 32px 0 28px; }
+    .gutter-hero { padding-top: clamp(58px, 7vw, 96px); background: linear-gradient(180deg, rgba(236,249,255,.84), rgba(255,255,255,.94)); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, .98fr) minmax(420px, 1.02fr); gap: clamp(34px, 6vw, 72px); align-items: center; }
+    .hero-copy h1 { margin-bottom: 22px; max-width: 850px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin: 30px 0 24px; }
     .trust-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .trust-row span { border: 1px solid rgba(83,58,253,.16); background: rgba(255,255,255,.72); padding: 8px 12px; border-radius: 8px; color: var(--ink-2); font-weight: 800; box-shadow: rgba(23,23,23,.04) 0 8px 22px; }
-    .hero-visual { position: relative; min-height: 560px; }
-    .orbital-card { border: 1px solid rgba(255,255,255,.58); border-radius: 18px; background: var(--surface-glass); box-shadow: var(--shadow-premium); backdrop-filter: blur(20px) saturate(1.25); }
-    .main-gutter-card { position: absolute; inset: 24px 22px auto 0; padding: 28px; min-height: 368px; }
-    .main-gutter-card::before { content: ""; position: absolute; inset: 18px; border: 1px dashed rgba(83,58,253,.22); border-radius: 14px; pointer-events: none; }
-    .mini-roof { position: relative; height: 142px; border-radius: 16px; background: linear-gradient(145deg, #061b31, #1c1e54); overflow: hidden; color: white; padding: 22px; display: flex; align-items: end; }
-    .mini-roof span { position: absolute; left: -8%; right: -8%; top: 42px; height: 24px; transform: rotate(-8deg); background: linear-gradient(90deg, var(--teal-bright), var(--brand)); box-shadow: 0 18px 48px rgba(45,212,191,.35); }
-    .mini-roof strong { position: relative; z-index: 1; font-size: 1.25rem; }
-    .water-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
-    .water-flow i { height: 9px; border-radius: 999px; background: linear-gradient(90deg, rgba(45,212,191,.2), var(--teal-bright), rgba(83,58,253,.5)); }
-    .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .metric-card { padding: 18px; border-radius: 14px; border: 1px solid var(--line); background: white; }
-    .metric-card small { color: var(--muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
-    .metric-card strong { display: block; color: var(--ink); font-size: 2.25rem; line-height: 1; letter-spacing: -.05em; margin: 8px 0 4px; }
-    .metric-card span { color: var(--muted); font-size: .95rem; }
-    .climate-dashboard { position: absolute; right: 0; bottom: 36px; width: min(330px, 78%); padding: 22px; background: rgba(6,27,49,.88); color: white; }
-    .climate-dashboard p { color: rgba(255,255,255,.72); font-size: .98rem; margin-bottom: 0; }
-    .dashboard-head { display: flex; justify-content: space-between; gap: 10px; font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 20px; color: rgba(255,255,255,.68); }
-    .dashboard-head b { color: #99f6e4; }
-    .weather-bars { height: 116px; display: flex; align-items: end; gap: 10px; margin-bottom: 18px; }
-    .weather-bars i { flex: 1; border-radius: 8px 8px 2px 2px; background: linear-gradient(180deg, var(--teal-bright), var(--brand)); opacity: .9; }
-    .marquee-section { padding: 0 0 22px; }
-    .marquee-track.light { margin-top: 0; border: 1px solid rgba(229,237,245,.94); border-radius: 14px; padding: 14px 18px; background: rgba(255,255,255,.74); color: var(--muted); box-shadow: var(--shadow-soft); }
-    .section-heading { margin-bottom: 34px; }
-    .services-grid { align-items: stretch; }
-    .service-card { position: relative; min-height: 100%; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.86); box-shadow: var(--shadow-soft); transition: transform .18s ease, box-shadow .18s ease; }
-    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-premium); }
-    .service-card.featured { background: linear-gradient(180deg, white, #f5f9ff); border-color: #d6d9fc; }
-    .service-number { display: inline-flex; margin-bottom: 24px; font-family: var(--font-mono); color: var(--brand); background: rgba(83,58,253,.08); border: 1px solid #d6d9fc; border-radius: 8px; padding: 5px 8px; }
-    .problem-section::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(0deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 46px 46px; mask-image: linear-gradient(to bottom, transparent, black 18%, black 70%, transparent); }
-    .risk-panel { padding: 18px; display: grid; gap: 12px; background: rgba(255,255,255,.1); }
+    .trust-row span { border: 1px solid #d5e7f2; background: white; padding: 9px 12px; border-radius: 999px; color: var(--ink-2); font-weight: 800; box-shadow: rgba(15, 59, 94, .07) 0 10px 24px; }
+
+    .gutter-photo-scene { position: relative; min-height: 520px; border-radius: 22px; padding: 22px; background: linear-gradient(160deg, #dff3ff, #ffffff 48%, #eef7f5); box-shadow: var(--shadow-premium); border: 1px solid #d7e7ef; overflow: hidden; }
+    .gutter-photo-scene::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 12% 18%, rgba(45, 140, 209, .26), transparent 28%), radial-gradient(circle at 90% 0%, rgba(255, 156, 63, .18), transparent 26%); }
+    .roofline-illustration { position: relative; z-index: 1; height: 100%; min-height: 470px; border-radius: 18px; overflow: hidden; background: linear-gradient(180deg, #d8eef9 0 45%, #f8fbf8 45% 100%); border: 1px solid rgba(255,255,255,.72); }
+    .sky-label { position: absolute; left: 22px; top: 20px; z-index: 4; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,.86); color: var(--ink-2); font-weight: 900; font-size: .88rem; }
+    .roof-snow { position: absolute; left: 62px; right: 42px; top: 124px; height: 18px; background: white; border-radius: 999px; box-shadow: 0 8px 18px rgba(42, 74, 104, .12); transform: skewY(-10deg); z-index: 3; }
+    .roof { position: absolute; left: 32px; right: 20px; top: 140px; height: 92px; background: linear-gradient(135deg, #26384e, #13243a); clip-path: polygon(0 74%, 58% 0, 100% 48%, 100% 100%, 0 100%); box-shadow: 0 22px 38px rgba(6, 27, 49, .22); z-index: 2; }
+    .fascia { position: absolute; left: 48px; right: 42px; top: 222px; height: 18px; background: #f2f6f7; border-bottom: 3px solid #c7d4da; transform: skewY(-3deg); z-index: 4; }
+    .gutter-channel { position: absolute; left: 58px; right: 54px; top: 238px; height: 22px; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #f7fbff, #b9c9d3); border: 1px solid #8fa5b3; z-index: 5; box-shadow: 0 13px 22px rgba(6,27,49,.18); }
+    .gutter-channel span { position: absolute; left: 24px; right: 52px; top: 7px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, #60a5fa, #22d3ee); }
+    .downspout { position: absolute; right: 68px; top: 252px; width: 22px; height: 174px; background: linear-gradient(90deg, #d9e4eb, #9eb2bf); border: 1px solid #879aa7; border-radius: 0 0 12px 12px; z-index: 4; }
+    .house-wall { position: absolute; left: 74px; right: 84px; top: 258px; bottom: 0; background: linear-gradient(180deg, #f8f1e6, #e8dac7); border-left: 1px solid #dbc8b1; border-right: 1px solid #dbc8b1; z-index: 1; }
+    .house-wall i { position: absolute; width: 62px; height: 68px; border-radius: 10px; background: linear-gradient(180deg, #c7e8fb, #85bdd9); border: 6px solid white; box-shadow: inset 0 0 0 1px rgba(6,27,49,.08); }
+    .house-wall i:nth-child(1) { left: 36px; top: 54px; }
+    .house-wall i:nth-child(2) { left: 132px; top: 54px; }
+    .house-wall i:nth-child(3) { right: 40px; top: 54px; }
+    .ladder { position: absolute; left: 28px; bottom: 18px; width: 86px; height: 218px; border-left: 7px solid #e57a2c; border-right: 7px solid #e57a2c; transform: rotate(10deg); z-index: 7; }
+    .ladder::before { content: ""; position: absolute; inset: 18px -3px; background: repeating-linear-gradient(to bottom, transparent 0 21px, #f8b26d 21px 27px); }
+    .ladder span { position: absolute; bottom: -24px; left: -10px; transform: rotate(-10deg); font-size: .8rem; font-weight: 900; color: #8b4211; }
+    .debris-bag { position: absolute; right: 110px; bottom: 28px; z-index: 6; padding: 12px 14px; border-radius: 50% 50% 44% 44%; background: #72543b; color: white; font-weight: 900; box-shadow: 0 13px 24px rgba(74, 46, 25, .25); }
+    .water-drops { position: absolute; right: 38px; top: 316px; z-index: 6; display: grid; gap: 12px; }
+    .water-drops i { width: 10px; height: 18px; border-radius: 999px 999px 999px 2px; background: #38bdf8; transform: rotate(35deg); opacity: .86; }
+    .scene-card { position: absolute; z-index: 8; right: 18px; top: 78px; width: min(252px, 66%); padding: 16px; border-radius: 16px; background: rgba(255,255,255,.94); border: 1px solid #dbe8ef; box-shadow: var(--shadow-soft); }
+    .scene-card strong { display: block; color: var(--ink); font-size: 1.05rem; margin-bottom: 5px; }
+    .scene-card span { color: var(--muted); font-size: .95rem; }
+    .scene-metrics { position: absolute; z-index: 8; left: 18px; right: 18px; bottom: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 310px; }
+    .scene-metrics .metric-card { padding: 14px; border-radius: 14px; background: rgba(255,255,255,.94); border: 1px solid #dbe8ef; box-shadow: var(--shadow-soft); }
+    .scene-metrics small { display: block; color: var(--muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; }
+    .scene-metrics strong { display: block; color: var(--ink); font-size: 1.45rem; line-height: 1; margin: 6px 0 3px; }
+    .scene-metrics span { color: var(--muted); font-size: .8rem; }
+
+    .service-selector-section { background: #fff; padding-top: clamp(46px, 6vw, 76px); }
+    .split-heading { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .62fr); gap: 28px; align-items: end; margin-bottom: 34px; }
+    .service-selector { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .trade-service-card { position: relative; overflow: hidden; padding: 28px; border-radius: 18px; background: white; border: 1px solid #dbe8ef; box-shadow: rgba(15, 59, 94, .08) 0 18px 38px; }
+    .trade-service-card::after { content: ""; position: absolute; inset: auto 0 0; height: 7px; background: linear-gradient(90deg, #f97316, #0ea5e9); }
+    .featured-trade-card { transform: translateY(-10px); border-color: #f6b36f; box-shadow: rgba(249,115,22,.16) 0 24px 50px; }
+    .service-label { display: inline-flex; margin-bottom: 12px; padding: 7px 10px; border-radius: 999px; background: #fff7ed; color: #9a3412; font-weight: 900; font-size: .86rem; }
+    .trade-service-card ul { margin: 18px 0 0; padding-left: 19px; color: var(--ink-2); }
+    .trade-service-card li { margin: 7px 0; }
+    .service-icon { width: 78px; height: 58px; margin-bottom: 22px; position: relative; }
+    .gutter-icon::before { content: ""; position: absolute; left: 0; right: 0; top: 20px; height: 18px; border-radius: 0 0 16px 16px; background: linear-gradient(180deg, #eaf2f7, #a7bac7); border: 1px solid #8196a4; }
+    .gutter-icon span { position: absolute; left: 10px; right: 16px; top: 26px; height: 4px; border-radius: 999px; background: #38bdf8; }
+    .cleaning-icon::after { content: ""; position: absolute; left: 8px; top: 2px; width: 46px; height: 20px; border-radius: 50%; background: repeating-linear-gradient(45deg, #8b5e34 0 7px, #3f2d1d 7px 12px); }
+    .install-icon::after { content: ""; position: absolute; right: 0; top: 0; width: 18px; height: 58px; background: #a7bac7; border-radius: 8px; }
+    .guard-icon::after { content: ""; position: absolute; left: 2px; right: 2px; top: 10px; height: 10px; background: repeating-linear-gradient(90deg, #0f766e 0 5px, #99f6e4 5px 9px); border-radius: 999px; }
+
+    .before-after-section { background: linear-gradient(180deg, #f7fbff, #fff); }
+    .before-after-gutters { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .before-panel, .after-panel { min-height: 300px; padding: 22px; border-radius: 18px; border: 1px solid #dbe8ef; box-shadow: var(--shadow-soft); background: white; }
+    .before-panel { background: linear-gradient(180deg, #fff7ed, #fff); }
+    .after-panel { background: linear-gradient(180deg, #ecfeff, #fff); }
+    .before-panel strong, .after-panel strong { display: block; font-size: 1.5rem; color: var(--ink); }
+    .before-panel span, .after-panel span { color: var(--muted); font-weight: 700; }
+    .mini-gutter { position: relative; margin-top: 62px; height: 70px; border-radius: 0 0 22px 22px; background: linear-gradient(180deg, #eaf2f7, #a7bac7); border: 1px solid #8196a4; overflow: hidden; }
+    .mini-gutter i { position: absolute; border-radius: 999px; }
+    .mini-gutter.clogged i { background: #6b4f2a; width: 58px; height: 22px; top: 14px; }
+    .mini-gutter.clogged i:nth-child(1) { left: 20px; } .mini-gutter.clogged i:nth-child(2) { left: 72px; top: 30px; } .mini-gutter.clogged i:nth-child(3) { right: 28px; }
+    .mini-gutter.clean i { height: 6px; left: 22px; right: 22px; background: linear-gradient(90deg, #38bdf8, #22d3ee); }
+    .mini-gutter.clean i:nth-child(1) { top: 20px; } .mini-gutter.clean i:nth-child(2) { top: 34px; opacity: .78; } .mini-gutter.clean i:nth-child(3) { top: 48px; opacity: .56; }
+
+    .trade-risk-panel { padding: 18px; display: grid; gap: 12px; background: rgba(255,255,255,.1); border-radius: 18px; border: 1px solid rgba(255,255,255,.14); }
     .risk-item { padding: 18px; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); }
     .risk-item strong { display: block; color: white; font-size: 1.2rem; margin-bottom: 4px; }
     .risk-item span { color: rgba(255,255,255,.72); }
-    .process-timeline { display: grid; gap: 14px; }
-    .process-timeline div { display: grid; grid-template-columns: 54px 1fr; gap: 0 18px; padding: 20px; border-radius: 16px; background: white; border: 1px solid var(--line); box-shadow: rgba(23,23,23,.05) 0 12px 32px; }
-    .process-timeline span { grid-row: span 2; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; background: #061b31; color: white; font-family: var(--font-mono); }
-    .process-timeline strong { color: var(--ink); font-size: 1.2rem; }
-    .process-timeline p { margin: 4px 0 0; }
+    .trade-process { display: grid; gap: 14px; }
+    .trade-process div { display: grid; grid-template-columns: 54px 1fr; gap: 0 18px; padding: 20px; border-radius: 16px; background: white; border: 1px solid var(--line); box-shadow: rgba(23,23,23,.05) 0 12px 32px; }
+    .trade-process span { grid-row: span 2; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; background: #f97316; color: white; font-family: var(--font-mono); }
+    .trade-process strong { color: var(--ink); font-size: 1.2rem; }
+    .trade-process p { margin: 4px 0 0; }
     .areas-section { background: linear-gradient(180deg, rgba(246,249,252,.54), rgba(255,255,255,.9)); }
     .area-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
     .area-grid span { padding: 16px; border-radius: 14px; border: 1px solid var(--line); background: white; color: var(--ink-2); font-weight: 900; box-shadow: rgba(23,23,23,.04) 0 10px 26px; }
-    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { min-height: 520px; } .area-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 560px) { .metric-grid, .area-grid { grid-template-columns: 1fr; } .climate-dashboard { width: 92%; } }
+    .trade-cta-band { background: linear-gradient(135deg, #0b243d, #103d5e 54%, #0f766e); }
+    @media (max-width: 960px) { .hero-grid, .split-heading, .service-selector, .before-after-gutters { grid-template-columns: 1fr; } .gutter-photo-scene { min-height: 470px; } .featured-trade-card { transform: none; } .area-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .gutter-photo-scene { min-height: 420px; padding: 14px; } .roofline-illustration { min-height: 392px; } .ladder { height: 160px; } .house-wall i:nth-child(3) { display: none; } .area-grid { grid-template-columns: 1fr; } }
   </style>
 </BaseLayout>
