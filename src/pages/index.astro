@@ -1,0 +1,112 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../data/site.json';
+---
+<BaseLayout title={site.title} description={site.metaDescription} canonicalPath="/">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Gouttières résidentielles — Québec, Lévis et Rive-Sud</p>
+      <h1>Expert en gouttières à Québec et Lévis</h1>
+      <p class="lead">Installation de gouttières en aluminium sans joints, nettoyage professionnel et pare-feuilles microfiltrants pour protéger votre maison contre le climat de Québec : neige lourde, glace, barrages de glace et cycles de gel-dégel.</p>
+      <div class="hero-actions">
+        <a class="btn" href={`mailto:${site.email}?subject=Soumission gratuite - gouttières Québec`}>Soumission gratuite</a>
+        <a class="btn secondary" href="#services">Voir nos services</a>
+      </div>
+      <div class="proof-strip" aria-label="Arguments clés">
+        <div class="proof">Gouttières 5 et 6 pouces fabriquées sur mesure</div>
+        <div class="proof">Systèmes de crochets continus jusqu’à 50 % plus robustes</div>
+        <div class="proof">Protection renforcée de 250 à 425 lb par pied linéaire</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <p class="eyebrow">Services essentiels</p>
+      <h2>Des gouttières pensées pour les vraies conditions de Québec</h2>
+      <div class="grid three">
+        <article class="card">
+          <h3>Installation de gouttières sans joints</h3>
+          <p>Nous installons des gouttières en aluminium sans joints de 5 et 6 pouces, fabriquées sur mesure pour votre toiture. Comme les joints sont la première cause de fuites, de rouille et d’affaissement, le système continu réduit les points faibles et évacue l’eau plus efficacement loin des fondations.</p>
+          <a class="service-link" href="/installation-gouttieres-sans-joints/">Installation de gouttières sans joints →</a>
+        </article>
+        <article class="card">
+          <h3>Nettoyage professionnel de gouttières</h3>
+          <p>Les feuilles, aiguilles, granules de bardeaux et débris bloquent l’écoulement et préparent le terrain aux poches de glace. Notre nettoyage sécuritaire aide à prévenir les débordements, l’infiltration d’eau au toit et l’humidité autour des fondations avant les pluies froides et la neige.</p>
+          <a class="service-link" href="/nettoyage-gouttieres/">Nettoyage professionnel de gouttières →</a>
+        </article>
+        <article class="card">
+          <h3>Protection pare-feuilles</h3>
+          <p>Nos pare-feuilles microfiltrants, incluant des solutions de type Alu-Rex T-Rex et DoublePro, bloquent les débris tout en renforçant la gouttière. Avec un système de crochets continus, vos gouttières résistent mieux au poids de la glace, de la neige et même à l’appui d’une échelle.</p>
+          <a class="service-link" href="/pare-feuilles/">Protection pare-feuilles →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="container grid two">
+      <div>
+        <p class="eyebrow">Pourquoi agir maintenant</p>
+        <h2>Ignorer vos gouttières peut coûter beaucoup plus qu’une installation bien faite</h2>
+        <p>Quand une gouttière déborde ou se déforme, l’eau ne disparaît pas : elle descend derrière le fascia, remonte sous les bardeaux, éclabousse le revêtement et s’accumule au pied des fondations. À Québec, les cycles de gel-dégel aggravent rapidement ces problèmes, car l’eau coincée prend de l’expansion, force les joints et crée des barrages de glace.</p>
+        <p>La solution durable consiste à réduire les points faibles. Les gouttières en aluminium sans joints limitent les fuites, tandis que le système de crochets continus renforce toute la longueur de la gouttière. Les produits premium de type Alu-Rex T-Rex et DoublePro peuvent rendre le système 50 % plus robustes et supporter de 250 à 425 lb par pied linéaire selon la configuration.</p>
+      </div>
+      <div class="plain-card">
+        <h3>Le bon système protège :</h3>
+        <ul class="feature-list">
+          <li>les fondations contre les accumulations d’eau répétées;</li>
+          <li>la toiture contre les infiltrations causées par la glace;</li>
+          <li>les fascias et soffites contre l’humidité persistante;</li>
+          <li>l’aménagement paysager contre les débordements;</li>
+          <li>la valeur de votre maison grâce à une durée de vie pouvant approcher près de 30 ans.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid two">
+      <div>
+        <p class="eyebrow">Expérience et sécurité</p>
+        <h2>Une installation impeccable par des professionnels certifiés et expérimentés</h2>
+        <p>Une gouttière performante dépend autant du produit que de l’installation. Notre équipe travaille de façon méthodique : prise de mesures, fabrication continue, positionnement des descentes, pente d’écoulement, ancrage et inspection finale. Chaque détail vise une évacuation stable et une finition propre.</p>
+        <p>Nous mettons l’accent sur la sécurité en hauteur, la protection de votre propriété et la durabilité du résultat. Vous obtenez une recommandation claire, sans pression, selon votre toiture, votre quartier, la présence d’arbres et l’exposition au vent.</p>
+      </div>
+      <div class="card">
+        <h3>Produits recommandés pour Québec</h3>
+        <ul class="feature-list">
+          <li>Gouttières d’aluminium sans joints 5 et 6 pouces</li>
+          <li>Système de crochets continus pour limiter le gauchissement</li>
+          <li>Pare-feuilles microfiltrants Alu-Rex T-Rex et DoublePro</li>
+          <li>Capacité renforcée de 250 à 425 lb par pied linéaire</li>
+          <li>Conception adaptée à la neige, la glace et le gel-dégel</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: var(--soft);">
+    <div class="container">
+      <p class="eyebrow">Secteurs desservis</p>
+      <h2>Gouttières à Québec, Lévis et dans les quartiers environnants</h2>
+      <p>Nous desservons les propriétaires de la grande région de Québec, incluant Lévis, Sainte-Foy, Beauport, Charlesbourg et la Rive-Sud, soit des secteurs résidentiels où la neige, le vent, les arbres matures et les redoux hivernaux mettent les gouttières à rude épreuve.</p>
+      <div class="areas">
+        {site.serviceAreas.map((area) => <span class="area-pill">{area}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <p class="eyebrow">Protégez votre maison</p>
+          <h2>Prêt à remplacer, nettoyer ou renforcer vos gouttières?</h2>
+          <p>Demandez une soumission gratuite pour une solution adaptée à votre maison, votre toiture et votre secteur dans la région de Québec.</p>
+        </div>
+        <a class="btn" href={`mailto:${site.email}?subject=Soumission gratuite - quebec-gouttieres.ca`}>Soumission gratuite</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

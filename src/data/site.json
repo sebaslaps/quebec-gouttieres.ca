@@ -1,0 +1,15 @@
+{
+  "name": "Québec Gouttières",
+  "domain": "quebec-gouttieres.ca",
+  "language": "fr-CA",
+  "title": "Gouttières à Québec et Lévis | Installation, nettoyage et pare-feuilles",
+  "metaDescription": "Experts en gouttières sans joints à Québec, Lévis, Sainte-Foy, Beauport, Charlesbourg et sur la Rive-Sud. Installation, nettoyage et pare-feuilles. Soumission gratuite.",
+  "phone": "",
+  "email": "info@quebec-gouttieres.ca",
+  "services": [
+    {"title": "Installation de gouttières sans joints", "slug": "installation-gouttieres-sans-joints"},
+    {"title": "Nettoyage professionnel de gouttières", "slug": "nettoyage-gouttieres"},
+    {"title": "Protection pare-feuilles", "slug": "pare-feuilles"}
+  ],
+  "serviceAreas": ["Québec", "Lévis", "Sainte-Foy", "Beauport", "Charlesbourg", "Rive-Sud", "Sillery", "Cap-Rouge", "Limoilou", "Vanier", "Saint-Nicolas", "Saint-Romuald"]
+}

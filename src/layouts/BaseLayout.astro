@@ -1,0 +1,143 @@
+---
+import site from '../data/site.json';
+
+const {
+  title = site.title,
+  description = site.metaDescription,
+  canonicalPath = '/',
+} = Astro.props;
+const canonicalUrl = new URL(canonicalPath, `https://${site.domain}`).toString();
+---
+<!doctype html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Québec Gouttières" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <style>
+      :root {
+        --ink: #10201f;
+        --muted: #4b5f5c;
+        --brand: #0f766e;
+        --brand-dark: #0b4f4b;
+        --accent: #f59e0b;
+        --ice: #ecfeff;
+        --soft: #f7fbfa;
+        --line: #dbe7e5;
+        --white: #ffffff;
+        --shadow: 0 20px 45px rgba(15, 118, 110, 0.14);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      body { margin: 0; color: var(--ink); background: var(--white); line-height: 1.65; }
+      a { color: inherit; }
+      .container { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+      .topbar { background: var(--brand-dark); color: var(--white); font-size: 0.92rem; }
+      .topbar .container { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; flex-wrap: wrap; }
+      header.site-header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+      .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; gap: 24px; }
+      .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 900; text-decoration: none; color: var(--brand-dark); font-size: 1.18rem; }
+      .logo-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; background: var(--brand); color: white; font-weight: 900; }
+      nav ul { display: flex; align-items: center; gap: 18px; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
+      nav a { text-decoration: none; color: var(--muted); font-weight: 700; font-size: .95rem; }
+      nav a:hover { color: var(--brand); }
+      .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 13px 20px; background: var(--accent); color: #231600; font-weight: 900; text-decoration: none; border: 0; box-shadow: 0 12px 25px rgba(245, 158, 11, .25); }
+      .btn.secondary { background: var(--brand); color: white; box-shadow: none; }
+      main { overflow: hidden; }
+      section { padding: 72px 0; }
+      .eyebrow { color: var(--brand); text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 900; }
+      h1, h2, h3 { line-height: 1.1; margin: 0 0 18px; }
+      h1 { font-size: clamp(2.45rem, 7vw, 4.8rem); letter-spacing: -.055em; }
+      h2 { font-size: clamp(2rem, 4.2vw, 3.35rem); letter-spacing: -.04em; }
+      h3 { font-size: 1.35rem; }
+      p { margin: 0 0 18px; color: var(--muted); }
+      .grid { display: grid; gap: 24px; }
+      .two { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: center; }
+      .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .card { background: var(--white); border: 1px solid var(--line); border-radius: 24px; padding: 28px; box-shadow: var(--shadow); }
+      .plain-card { background: var(--soft); border: 1px solid var(--line); border-radius: 24px; padding: 28px; }
+      .hero { padding: 86px 0; background: radial-gradient(circle at top right, #ccfbf1 0, transparent 35%), linear-gradient(180deg, #f7fbfa 0%, #ffffff 100%); }
+      .hero p.lead { font-size: clamp(1.08rem, 2.1vw, 1.35rem); max-width: 760px; color: #29423f; }
+      .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+      .proof-strip { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .proof { background: rgba(255,255,255,.82); border: 1px solid var(--line); border-radius: 18px; padding: 18px; font-weight: 800; color: var(--brand-dark); }
+      .dark { background: var(--brand-dark); color: var(--white); }
+      .dark p, .dark li { color: #d7fffb; }
+      .dark .eyebrow { color: #99f6e4; }
+      .feature-list { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+      .feature-list li { padding-left: 32px; position: relative; color: var(--muted); }
+      .feature-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--brand); font-weight: 900; }
+      .service-link { display: inline-block; margin-top: 12px; color: var(--brand); font-weight: 900; text-decoration: none; }
+      .areas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+      .area-pill { border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; background: white; color: var(--brand-dark); font-weight: 800; }
+      .cta-band { background: linear-gradient(135deg, var(--brand), var(--brand-dark)); color: white; border-radius: 30px; padding: clamp(28px, 5vw, 54px); display: grid; grid-template-columns: 1.5fr auto; align-items: center; gap: 24px; }
+      .cta-band p { color: #dcfffb; }
+      .footer { background: #071d1b; color: #e6fffb; padding: 46px 0; }
+      .footer a { color: #e6fffb; }
+      .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 32px; }
+      .footer p { color: #b7d7d3; }
+      @media (max-width: 820px) {
+        .two, .three, .footer-grid, .cta-band { grid-template-columns: 1fr; }
+        .proof-strip { grid-template-columns: 1fr; }
+        header.site-header { position: static; }
+        .nav { align-items: flex-start; flex-direction: column; }
+        nav ul { align-items: flex-start; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container">
+        <span>Gouttières sans joints, nettoyage et pare-feuilles dans la grande région de Québec</span>
+        <a href="mailto:info@quebec-gouttieres.ca">Soumission gratuite : {site.email}</a>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="logo" href="/" aria-label="Accueil Québec Gouttières"><span class="logo-mark">QG</span><span>Québec Gouttières</span></a>
+        <nav aria-label="Navigation principale">
+          <ul>
+            <li><a href="/#services">Services</a></li>
+            <li><a href="/installation-gouttieres-sans-joints/">Installation</a></li>
+            <li><a href="/nettoyage-gouttieres/">Nettoyage</a></li>
+            <li><a href="/pare-feuilles/">Pare-feuilles</a></li>
+            <li><a class="btn" href="mailto:info@quebec-gouttieres.ca?subject=Soumission gratuite - gouttières">Soumission gratuite</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo" href="/"><span class="logo-mark">QG</span><span>Québec Gouttières</span></a>
+          <p>Service local de génération de demandes pour propriétaires recherchant des spécialistes en gouttières à Québec, Lévis et sur la Rive-Sud.</p>
+        </div>
+        <div>
+          <h3>Services</h3>
+          <p><a href="/installation-gouttieres-sans-joints/">Installation de gouttières sans joints</a></p>
+          <p><a href="/nettoyage-gouttieres/">Nettoyage de gouttières</a></p>
+          <p><a href="/pare-feuilles/">Pare-feuilles</a></p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p><a href="mailto:info@quebec-gouttieres.ca">{site.email}</a></p>
+          <p>Soumission gratuite pour la région de Québec.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

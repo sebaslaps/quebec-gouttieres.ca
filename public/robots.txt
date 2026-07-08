@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quebec-gouttieres.ca/sitemap-index.xml

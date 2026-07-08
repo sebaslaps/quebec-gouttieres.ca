@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import pages from '../data/service-pages.json';
+import site from '../data/site.json';
+
+export function getStaticPaths() {
+  return pages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const paragraphs = page.body.split('\n\n');
+---
+<BaseLayout title={page.title} description={page.metaDescription} canonicalPath={`/${page.slug}/`}>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Québec, Lévis et Rive-Sud</p>
+      <h1>{page.h1}</h1>
+      <p class="lead">{page.intro}</p>
+      <div class="hero-actions">
+        <a class="btn" href={`mailto:${site.email}?subject=${encodeURIComponent(page.cta)}`}>{page.cta}</a>
+        <a class="btn secondary" href="/#services">Tous les services</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container grid two" style="align-items:start;">
+      <article class="card">
+        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </article>
+      <aside class="plain-card">
+        <p class="eyebrow">Solution recommandée</p>
+        <h2>Un système complet, pas une réparation temporaire</h2>
+        <ul class="feature-list">
+          <li>Évaluation du drainage et des zones à risque</li>
+          <li>Recommandations adaptées au climat de Québec</li>
+          <li>Options de gouttières sans joints, nettoyage et pare-feuilles</li>
+          <li>Installation sécuritaire par une équipe expérimentée</li>
+          <li>Soumission gratuite dans la grande région de Québec</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="container">
+      <div class="cta-band">
+        <div>
+          <p class="eyebrow">Soumission gratuite</p>
+          <h2>Parlez-nous de votre propriété à Québec ou Lévis</h2>
+          <p>Recevez une recommandation claire pour protéger votre toiture, vos fondations et votre maison contre l’eau, la neige et la glace.</p>
+        </div>
+        <a class="btn" href={`mailto:${site.email}?subject=${encodeURIComponent(page.cta)}`}>{page.cta}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
