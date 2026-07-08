@@ -182,25 +182,25 @@ import site from '../data/site.json';
   </section>
 
   <style>
-    .gutter-hero { padding-top: clamp(58px, 7vw, 96px); background: linear-gradient(180deg, rgba(236,249,255,.84), rgba(255,255,255,.94)); }
+    .gutter-hero { padding-top: clamp(58px, 7vw, 96px); background: linear-gradient(180deg, rgba(247,241,231,.92), rgba(255,255,255,.96)); }
     .hero-grid { display: grid; grid-template-columns: minmax(0, .98fr) minmax(420px, 1.02fr); gap: clamp(34px, 6vw, 72px); align-items: center; }
     .hero-copy h1 { margin-bottom: 22px; max-width: 850px; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin: 30px 0 24px; }
     .trust-row { display: flex; flex-wrap: wrap; gap: 10px; }
-    .trust-row span { border: 1px solid #d5e7f2; background: white; padding: 9px 12px; border-radius: 999px; color: var(--ink-2); font-weight: 800; box-shadow: rgba(15, 59, 94, .07) 0 10px 24px; }
+    .trust-row span { border: 1px solid #ded5c6; background: white; padding: 9px 12px; border-radius: 999px; color: var(--ink-2); font-weight: 800; box-shadow: rgba(31, 42, 50, .07) 0 10px 24px; }
 
-    .gutter-photo-scene { position: relative; min-height: 520px; border-radius: 22px; padding: 22px; background: linear-gradient(160deg, #dff3ff, #ffffff 48%, #eef7f5); box-shadow: var(--shadow-premium); border: 1px solid #d7e7ef; overflow: hidden; }
-    .gutter-photo-scene::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 12% 18%, rgba(45, 140, 209, .26), transparent 28%), radial-gradient(circle at 90% 0%, rgba(255, 156, 63, .18), transparent 26%); }
-    .roofline-illustration { position: relative; z-index: 1; height: 100%; min-height: 470px; border-radius: 18px; overflow: hidden; background: linear-gradient(180deg, #d8eef9 0 45%, #f8fbf8 45% 100%); border: 1px solid rgba(255,255,255,.72); }
+    .gutter-photo-scene { position: relative; min-height: 520px; border-radius: 22px; padding: 22px; background: linear-gradient(160deg, #eee5d8, #ffffff 48%, #e9f0ec); box-shadow: var(--shadow-premium); border: 1px solid #d8cfc0; overflow: hidden; }
+    .gutter-photo-scene::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 12% 18%, rgba(47, 128, 167, .18), transparent 28%), radial-gradient(circle at 90% 0%, rgba(249, 115, 22, .22), transparent 26%); }
+    .roofline-illustration { position: relative; z-index: 1; height: 100%; min-height: 470px; border-radius: 18px; overflow: hidden; background: linear-gradient(180deg, #dfe8e6 0 45%, #f7f1e7 45% 100%); border: 1px solid rgba(255,255,255,.72); }
     .sky-label { position: absolute; left: 22px; top: 20px; z-index: 4; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,.86); color: var(--ink-2); font-weight: 900; font-size: .88rem; }
     .roof-snow { position: absolute; left: 62px; right: 42px; top: 124px; height: 18px; background: white; border-radius: 999px; box-shadow: 0 8px 18px rgba(42, 74, 104, .12); transform: skewY(-10deg); z-index: 3; }
-    .roof { position: absolute; left: 32px; right: 20px; top: 140px; height: 92px; background: linear-gradient(135deg, #26384e, #13243a); clip-path: polygon(0 74%, 58% 0, 100% 48%, 100% 100%, 0 100%); box-shadow: 0 22px 38px rgba(6, 27, 49, .22); z-index: 2; }
+    .roof { position: absolute; left: 32px; right: 20px; top: 140px; height: 92px; background: linear-gradient(135deg, var(--roof-charcoal), var(--roof-deep)); clip-path: polygon(0 74%, 58% 0, 100% 48%, 100% 100%, 0 100%); box-shadow: 0 22px 38px rgba(18, 26, 32, .24); z-index: 2; }
     .fascia { position: absolute; left: 48px; right: 42px; top: 222px; height: 18px; background: #f2f6f7; border-bottom: 3px solid #c7d4da; transform: skewY(-3deg); z-index: 4; }
-    .gutter-channel { position: absolute; left: 58px; right: 54px; top: 238px; height: 22px; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #f7fbff, #b9c9d3); border: 1px solid #8fa5b3; z-index: 5; box-shadow: 0 13px 22px rgba(6,27,49,.18); }
-    .gutter-channel span { position: absolute; left: 24px; right: 52px; top: 7px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, #60a5fa, #22d3ee); }
-    .downspout { position: absolute; right: 68px; top: 252px; width: 22px; height: 174px; background: linear-gradient(90deg, #d9e4eb, #9eb2bf); border: 1px solid #879aa7; border-radius: 0 0 12px 12px; z-index: 4; }
-    .house-wall { position: absolute; left: 74px; right: 84px; top: 258px; bottom: 0; background: linear-gradient(180deg, #f8f1e6, #e8dac7); border-left: 1px solid #dbc8b1; border-right: 1px solid #dbc8b1; z-index: 1; }
-    .house-wall i { position: absolute; width: 62px; height: 68px; border-radius: 10px; background: linear-gradient(180deg, #c7e8fb, #85bdd9); border: 6px solid white; box-shadow: inset 0 0 0 1px rgba(6,27,49,.08); }
+    .gutter-channel { position: absolute; left: 58px; right: 54px; top: 238px; height: 22px; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #f7f8f7, var(--aluminum)); border: 1px solid var(--aluminum-dark); z-index: 5; box-shadow: 0 13px 22px rgba(18,26,32,.18); }
+    .gutter-channel span { position: absolute; left: 24px; right: 52px; top: 7px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--rain-blue), #76b6c9); }
+    .downspout { position: absolute; right: 68px; top: 252px; width: 22px; height: 174px; background: linear-gradient(90deg, #e5e9e8, var(--aluminum-dark)); border: 1px solid #7f8b91; border-radius: 0 0 12px 12px; z-index: 4; }
+    .house-wall { position: absolute; left: 74px; right: 84px; top: 258px; bottom: 0; background: linear-gradient(180deg, var(--cream), #e5d7c4); border-left: 1px solid #d2c0a9; border-right: 1px solid #d2c0a9; z-index: 1; }
+    .house-wall i { position: absolute; width: 62px; height: 68px; border-radius: 10px; background: linear-gradient(180deg, #c8deda, #8caea9); border: 6px solid white; box-shadow: inset 0 0 0 1px rgba(18,26,32,.08); }
     .house-wall i:nth-child(1) { left: 36px; top: 54px; }
     .house-wall i:nth-child(2) { left: 132px; top: 54px; }
     .house-wall i:nth-child(3) { right: 40px; top: 54px; }
@@ -209,12 +209,12 @@ import site from '../data/site.json';
     .ladder span { position: absolute; bottom: -24px; left: -10px; transform: rotate(-10deg); font-size: .8rem; font-weight: 900; color: #8b4211; }
     .debris-bag { position: absolute; right: 110px; bottom: 28px; z-index: 6; padding: 12px 14px; border-radius: 50% 50% 44% 44%; background: #72543b; color: white; font-weight: 900; box-shadow: 0 13px 24px rgba(74, 46, 25, .25); }
     .water-drops { position: absolute; right: 38px; top: 316px; z-index: 6; display: grid; gap: 12px; }
-    .water-drops i { width: 10px; height: 18px; border-radius: 999px 999px 999px 2px; background: #38bdf8; transform: rotate(35deg); opacity: .86; }
-    .scene-card { position: absolute; z-index: 8; right: 18px; top: 78px; width: min(252px, 66%); padding: 16px; border-radius: 16px; background: rgba(255,255,255,.94); border: 1px solid #dbe8ef; box-shadow: var(--shadow-soft); }
+    .water-drops i { width: 10px; height: 18px; border-radius: 999px 999px 999px 2px; background: var(--rain-blue); transform: rotate(35deg); opacity: .86; }
+    .scene-card { position: absolute; z-index: 8; right: 18px; top: 78px; width: min(252px, 66%); padding: 16px; border-radius: 16px; background: rgba(255,255,255,.94); border: 1px solid #ded5c6; box-shadow: var(--shadow-soft); }
     .scene-card strong { display: block; color: var(--ink); font-size: 1.05rem; margin-bottom: 5px; }
     .scene-card span { color: var(--muted); font-size: .95rem; }
     .scene-metrics { position: absolute; z-index: 8; left: 18px; right: 18px; bottom: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 310px; }
-    .scene-metrics .metric-card { padding: 14px; border-radius: 14px; background: rgba(255,255,255,.94); border: 1px solid #dbe8ef; box-shadow: var(--shadow-soft); }
+    .scene-metrics .metric-card { padding: 14px; border-radius: 14px; background: rgba(255,255,255,.94); border: 1px solid #ded5c6; box-shadow: var(--shadow-soft); }
     .scene-metrics small { display: block; color: var(--muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; }
     .scene-metrics strong { display: block; color: var(--ink); font-size: 1.45rem; line-height: 1; margin: 6px 0 3px; }
     .scene-metrics span { color: var(--muted); font-size: .8rem; }
@@ -222,31 +222,31 @@ import site from '../data/site.json';
     .service-selector-section { background: #fff; padding-top: clamp(46px, 6vw, 76px); }
     .split-heading { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .62fr); gap: 28px; align-items: end; margin-bottom: 34px; }
     .service-selector { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
-    .trade-service-card { position: relative; overflow: hidden; padding: 28px; border-radius: 18px; background: white; border: 1px solid #dbe8ef; box-shadow: rgba(15, 59, 94, .08) 0 18px 38px; }
-    .trade-service-card::after { content: ""; position: absolute; inset: auto 0 0; height: 7px; background: linear-gradient(90deg, #f97316, #0ea5e9); }
+    .trade-service-card { position: relative; overflow: hidden; padding: 28px; border-radius: 18px; background: white; border: 1px solid #ded5c6; box-shadow: rgba(31, 42, 50, .08) 0 18px 38px; }
+    .trade-service-card::after { content: ""; position: absolute; inset: auto 0 0; height: 7px; background: linear-gradient(90deg, var(--safety-orange), var(--cedar)); }
     .featured-trade-card { transform: translateY(-10px); border-color: #f6b36f; box-shadow: rgba(249,115,22,.16) 0 24px 50px; }
     .service-label { display: inline-flex; margin-bottom: 12px; padding: 7px 10px; border-radius: 999px; background: #fff7ed; color: #9a3412; font-weight: 900; font-size: .86rem; }
     .trade-service-card ul { margin: 18px 0 0; padding-left: 19px; color: var(--ink-2); }
     .trade-service-card li { margin: 7px 0; }
     .service-icon { width: 78px; height: 58px; margin-bottom: 22px; position: relative; }
     .gutter-icon::before { content: ""; position: absolute; left: 0; right: 0; top: 20px; height: 18px; border-radius: 0 0 16px 16px; background: linear-gradient(180deg, #eaf2f7, #a7bac7); border: 1px solid #8196a4; }
-    .gutter-icon span { position: absolute; left: 10px; right: 16px; top: 26px; height: 4px; border-radius: 999px; background: #38bdf8; }
+    .gutter-icon span { position: absolute; left: 10px; right: 16px; top: 26px; height: 4px; border-radius: 999px; background: var(--rain-blue); }
     .cleaning-icon::after { content: ""; position: absolute; left: 8px; top: 2px; width: 46px; height: 20px; border-radius: 50%; background: repeating-linear-gradient(45deg, #8b5e34 0 7px, #3f2d1d 7px 12px); }
     .install-icon::after { content: ""; position: absolute; right: 0; top: 0; width: 18px; height: 58px; background: #a7bac7; border-radius: 8px; }
-    .guard-icon::after { content: ""; position: absolute; left: 2px; right: 2px; top: 10px; height: 10px; background: repeating-linear-gradient(90deg, #0f766e 0 5px, #99f6e4 5px 9px); border-radius: 999px; }
+    .guard-icon::after { content: ""; position: absolute; left: 2px; right: 2px; top: 10px; height: 10px; background: repeating-linear-gradient(90deg, var(--evergreen) 0 5px, #b6cdbf 5px 9px); border-radius: 999px; }
 
-    .before-after-section { background: linear-gradient(180deg, #f7fbff, #fff); }
+    .before-after-section { background: linear-gradient(180deg, #faf7f0, #fff); }
     .before-after-gutters { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .before-panel, .after-panel { min-height: 300px; padding: 22px; border-radius: 18px; border: 1px solid #dbe8ef; box-shadow: var(--shadow-soft); background: white; }
+    .before-panel, .after-panel { min-height: 300px; padding: 22px; border-radius: 18px; border: 1px solid #ded5c6; box-shadow: var(--shadow-soft); background: white; }
     .before-panel { background: linear-gradient(180deg, #fff7ed, #fff); }
-    .after-panel { background: linear-gradient(180deg, #ecfeff, #fff); }
+    .after-panel { background: linear-gradient(180deg, #eef5ef, #fff); }
     .before-panel strong, .after-panel strong { display: block; font-size: 1.5rem; color: var(--ink); }
     .before-panel span, .after-panel span { color: var(--muted); font-weight: 700; }
     .mini-gutter { position: relative; margin-top: 62px; height: 70px; border-radius: 0 0 22px 22px; background: linear-gradient(180deg, #eaf2f7, #a7bac7); border: 1px solid #8196a4; overflow: hidden; }
     .mini-gutter i { position: absolute; border-radius: 999px; }
     .mini-gutter.clogged i { background: #6b4f2a; width: 58px; height: 22px; top: 14px; }
     .mini-gutter.clogged i:nth-child(1) { left: 20px; } .mini-gutter.clogged i:nth-child(2) { left: 72px; top: 30px; } .mini-gutter.clogged i:nth-child(3) { right: 28px; }
-    .mini-gutter.clean i { height: 6px; left: 22px; right: 22px; background: linear-gradient(90deg, #38bdf8, #22d3ee); }
+    .mini-gutter.clean i { height: 6px; left: 22px; right: 22px; background: linear-gradient(90deg, var(--rain-blue), #76b6c9); }
     .mini-gutter.clean i:nth-child(1) { top: 20px; } .mini-gutter.clean i:nth-child(2) { top: 34px; opacity: .78; } .mini-gutter.clean i:nth-child(3) { top: 48px; opacity: .56; }
 
     .trade-risk-panel { padding: 18px; display: grid; gap: 12px; background: rgba(255,255,255,.1); border-radius: 18px; border: 1px solid rgba(255,255,255,.14); }
@@ -261,7 +261,7 @@ import site from '../data/site.json';
     .areas-section { background: linear-gradient(180deg, rgba(246,249,252,.54), rgba(255,255,255,.9)); }
     .area-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
     .area-grid span { padding: 16px; border-radius: 14px; border: 1px solid var(--line); background: white; color: var(--ink-2); font-weight: 900; box-shadow: rgba(23,23,23,.04) 0 10px 26px; }
-    .trade-cta-band { background: linear-gradient(135deg, #0b243d, #103d5e 54%, #0f766e); }
+    .trade-cta-band { background: linear-gradient(135deg, var(--roof-deep), var(--roof-charcoal) 54%, var(--evergreen)); }
     @media (max-width: 960px) { .hero-grid, .split-heading, .service-selector, .before-after-gutters { grid-template-columns: 1fr; } .gutter-photo-scene { min-height: 470px; } .featured-trade-card { transform: none; } .area-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 560px) { .gutter-photo-scene { min-height: 420px; padding: 14px; } .roofline-illustration { min-height: 392px; } .ladder { height: 160px; } .house-wall i:nth-child(3) { display: none; } .area-grid { grid-template-columns: 1fr; } }
   </style>

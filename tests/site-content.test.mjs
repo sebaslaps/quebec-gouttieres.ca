@@ -137,6 +137,27 @@ test('visual system feels premium and modern instead of generic template-like', 
   assert.doesNotMatch(layout, /border-radius:\s*24px|border-radius:\s*30px/);
 });
 
+test('color palette feels like an exterior gutter contractor, not a blue SaaS template', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  const home = read('src/pages/index.astro');
+  const combined = layout + home;
+
+  for (const token of [
+    '--roof-charcoal',
+    '--aluminum',
+    '--cedar',
+    '--safety-orange',
+    '--rain-blue',
+    '#1f2a32',
+    '#f97316',
+  ]) {
+    assert.match(combined, new RegExp(token), `${token} should be part of the contractor palette`);
+  }
+
+  assert.doesNotMatch(layout, /--brand:\s*#533afd/i);
+  assert.doesNotMatch(layout, /--magenta:\s*#f96bee/i);
+});
+
 test('homepage visually communicates gutter services, not an abstract SaaS dashboard', () => {
   const home = read('src/pages/index.astro');
   assert.match(home, /gutter-photo-scene/);

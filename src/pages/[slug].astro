@@ -75,16 +75,16 @@ const serviceLabel = page.slug.includes('nettoyage') ? 'Nettoyage de gouttières
   </section>
 
   <style>
-    .trade-service-hero { padding-top: clamp(58px, 7vw, 100px); background: linear-gradient(180deg, #eef8ff, #fff); }
+    .trade-service-hero { padding-top: clamp(58px, 7vw, 100px); background: linear-gradient(180deg, #faf7f0, #fff); }
     .service-hero-grid { display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(340px, .82fr); gap: clamp(32px, 7vw, 78px); align-items: center; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-    .gutter-service-visual { min-height: 410px; padding: 22px; overflow: hidden; background: linear-gradient(160deg, #dff3ff, #ffffff 52%, #f7fbf8); border: 1px solid #d7e7ef; border-radius: 22px; box-shadow: var(--shadow-premium); }
+    .gutter-service-visual { min-height: 410px; padding: 22px; overflow: hidden; background: linear-gradient(160deg, #eee5d8, #ffffff 52%, #e9f0ec); border: 1px solid #d8cfc0; border-radius: 22px; box-shadow: var(--shadow-premium); }
     .service-roofline { position: relative; min-height: 268px; border-radius: 16px; overflow: hidden; background: linear-gradient(180deg, #d9edf8 0 48%, #efe1cf 48% 100%); margin-bottom: 16px; }
-    .service-badge { position: absolute; left: 18px; top: 18px; z-index: 5; padding: 8px 12px; border-radius: 999px; background: white; color: #0b243d; font-weight: 900; font-size: .85rem; box-shadow: var(--shadow-soft); }
-    .roof-strip { position: absolute; left: 18px; right: 18px; top: 104px; height: 74px; background: linear-gradient(135deg, #24364d, #12243a); clip-path: polygon(0 70%, 55% 0, 100% 52%, 100% 100%, 0 100%); }
-    .service-gutter { position: absolute; left: 38px; right: 44px; top: 174px; height: 22px; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #f7fbff, #a7bac7); border: 1px solid #8196a4; box-shadow: 0 13px 22px rgba(6,27,49,.16); }
-    .service-gutter i { position: absolute; left: 20px; right: 46px; top: 7px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, #38bdf8, #22d3ee); }
-    .service-downspout { position: absolute; right: 54px; top: 194px; width: 22px; height: 74px; background: linear-gradient(90deg, #d9e4eb, #9eb2bf); border: 1px solid #879aa7; border-radius: 0 0 10px 10px; }
+    .service-badge { position: absolute; left: 18px; top: 18px; z-index: 5; padding: 8px 12px; border-radius: 999px; background: white; color: var(--roof-charcoal); font-weight: 900; font-size: .85rem; box-shadow: var(--shadow-soft); }
+    .roof-strip { position: absolute; left: 18px; right: 18px; top: 104px; height: 74px; background: linear-gradient(135deg, var(--roof-charcoal), var(--roof-deep)); clip-path: polygon(0 70%, 55% 0, 100% 52%, 100% 100%, 0 100%); }
+    .service-gutter { position: absolute; left: 38px; right: 44px; top: 174px; height: 22px; border-radius: 0 0 14px 14px; background: linear-gradient(180deg, #f7f8f7, var(--aluminum)); border: 1px solid var(--aluminum-dark); box-shadow: 0 13px 22px rgba(18,26,32,.16); }
+    .service-gutter i { position: absolute; left: 20px; right: 46px; top: 7px; height: 5px; border-radius: 999px; background: linear-gradient(90deg, var(--rain-blue), #76b6c9); }
+    .service-downspout { position: absolute; right: 54px; top: 194px; width: 22px; height: 74px; background: linear-gradient(90deg, #e5e9e8, var(--aluminum-dark)); border: 1px solid #7f8b91; border-radius: 0 0 10px 10px; }
     .service-tools { position: absolute; left: 26px; bottom: 18px; display: flex; gap: 10px; align-items: center; }
     .service-tools span, .service-tools b { padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,.9); color: var(--ink-2); font-size: .82rem; box-shadow: var(--shadow-soft); }
     .visual-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
@@ -92,7 +92,7 @@ const serviceLabel = page.slug.includes('nettoyage') ? 'Nettoyage de gouttières
     .service-copy { padding: clamp(28px, 4vw, 48px); }
     .service-copy p { font-size: 1.12rem; line-height: 1.72; }
     .service-copy .opening-paragraph { color: var(--ink-2); font-size: 1.24rem; }
-    .trade-quote-card { position: sticky; top: 96px; padding: 26px; border-radius: 18px; background: #fff; border: 1px solid #dbe8ef; box-shadow: rgba(15, 59, 94, .08) 0 18px 38px; }
+    .trade-quote-card { position: sticky; top: 96px; padding: 26px; border-radius: 18px; background: #fff; border: 1px solid #ded5c6; box-shadow: rgba(31, 42, 50, .08) 0 18px 38px; }
     .trade-quote-card h2 { font-size: 2rem; }
     .trade-quote-card .btn { margin-top: 26px; width: 100%; }
     @media (max-width: 960px) { .service-hero-grid, .service-content-grid { grid-template-columns: 1fr; } .trade-quote-card { position: relative; top: 0; } }
