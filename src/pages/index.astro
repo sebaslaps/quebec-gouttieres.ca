@@ -3,48 +3,91 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import site from '../data/site.json';
 ---
 <BaseLayout title={site.title} description={site.metaDescription} canonicalPath="/">
-  <section class="hero">
-    <div class="container">
-      <p class="eyebrow">Gouttières résidentielles — Québec, Lévis et Rive-Sud</p>
-      <h1>Expert en gouttières à Québec et Lévis</h1>
-      <p class="lead">Installation de gouttières en aluminium sans joints, nettoyage professionnel et pare-feuilles microfiltrants pour protéger votre maison contre le climat de Québec : neige lourde, glace, barrages de glace et cycles de gel-dégel.</p>
-      <div class="hero-actions">
-        <a class="btn" href={`mailto:${site.email}?subject=Soumission gratuite - gouttières Québec`}>Soumission gratuite</a>
-        <a class="btn secondary" href="#services">Voir nos services</a>
+  <section class="hero modern-hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Gouttières résidentielles — Québec, Lévis et Rive-Sud</p>
+        <h1>Expert en gouttières à Québec et Lévis</h1>
+        <p class="lead">Installation de gouttières en aluminium sans joints, nettoyage professionnel et pare-feuilles microfiltrants pour protéger votre maison contre le climat de Québec : neige lourde, glace, barrages de glace et cycles de gel-dégel.</p>
+        <div class="hero-actions">
+          <a class="btn" href={`mailto:${site.email}?subject=Soumission gratuite - gouttières Québec`}>Soumission gratuite</a>
+          <a class="btn secondary" href="#services">Explorer les services</a>
+        </div>
+        <div class="trust-row" aria-label="Arguments clés">
+          <span>Sans joints</span>
+          <span>5 et 6 pouces</span>
+          <span>Pare-feuilles microfiltrants</span>
+        </div>
       </div>
-      <div class="proof-strip" aria-label="Arguments clés">
-        <div class="proof">Gouttières 5 et 6 pouces fabriquées sur mesure</div>
-        <div class="proof">Systèmes de crochets continus jusqu’à 50 % plus robustes</div>
-        <div class="proof">Protection renforcée de 250 à 425 lb par pied linéaire</div>
+
+      <div class="hero-visual" aria-label="Aperçu visuel de protection des gouttières">
+        <div class="orbital-card main-gutter-card">
+          <div class="mini-roof">
+            <span></span>
+            <strong>Gouttière continue</strong>
+          </div>
+          <div class="water-flow" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="metric-grid">
+            <div class="metric-card">
+              <small>Résistance</small>
+              <strong>250–425</strong>
+              <span>lb / pied linéaire</span>
+            </div>
+            <div class="metric-card">
+              <small>Robustesse</small>
+              <strong>+50%</strong>
+              <span>avec crochets continus</span>
+            </div>
+          </div>
+        </div>
+        <div class="climate-dashboard orbital-card">
+          <div class="dashboard-head">
+            <span>Simulation climat Québec</span>
+            <b>hiver actif</b>
+          </div>
+          <div class="weather-bars" aria-hidden="true"><i style="height:44%"></i><i style="height:78%"></i><i style="height:58%"></i><i style="height:86%"></i><i style="height:64%"></i></div>
+          <p>Neige lourde, glace et gel-dégel exigent un système rigide, étanche et bien ancré.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <section class="marquee-section" aria-label="Services rapides">
+    <div class="container marquee-track light">
+      <span>Installation sans joints</span><span>Nettoyage saisonnier</span><span>Alu-Rex T-Rex</span><span>DoublePro</span><span>Microfiltration</span><span>Québec & Lévis</span>
     </div>
   </section>
 
   <section id="services">
     <div class="container">
-      <p class="eyebrow">Services essentiels</p>
-      <h2>Des gouttières pensées pour les vraies conditions de Québec</h2>
-      <div class="grid three">
-        <article class="card">
+      <div class="section-heading">
+        <p class="eyebrow">Services essentiels</p>
+        <h2>Un système complet pour évacuer l’eau avant qu’elle devienne un problème</h2>
+      </div>
+      <div class="grid three services-grid">
+        <article class="service-card featured">
+          <span class="service-number">01</span>
           <h3>Installation de gouttières sans joints</h3>
           <p>Nous installons des gouttières en aluminium sans joints de 5 et 6 pouces, fabriquées sur mesure pour votre toiture. Comme les joints sont la première cause de fuites, de rouille et d’affaissement, le système continu réduit les points faibles et évacue l’eau plus efficacement loin des fondations.</p>
-          <a class="service-link" href="/installation-gouttieres-sans-joints/">Installation de gouttières sans joints →</a>
+          <a class="service-link" href="/installation-gouttieres-sans-joints/">Voir l’installation →</a>
         </article>
-        <article class="card">
+        <article class="service-card">
+          <span class="service-number">02</span>
           <h3>Nettoyage professionnel de gouttières</h3>
           <p>Les feuilles, aiguilles, granules de bardeaux et débris bloquent l’écoulement et préparent le terrain aux poches de glace. Notre nettoyage sécuritaire aide à prévenir les débordements, l’infiltration d’eau au toit et l’humidité autour des fondations avant les pluies froides et la neige.</p>
-          <a class="service-link" href="/nettoyage-gouttieres/">Nettoyage professionnel de gouttières →</a>
+          <a class="service-link" href="/nettoyage-gouttieres/">Voir le nettoyage →</a>
         </article>
-        <article class="card">
+        <article class="service-card">
+          <span class="service-number">03</span>
           <h3>Protection pare-feuilles</h3>
           <p>Nos pare-feuilles microfiltrants, incluant des solutions de type Alu-Rex T-Rex et DoublePro, bloquent les débris tout en renforçant la gouttière. Avec un système de crochets continus, vos gouttières résistent mieux au poids de la glace, de la neige et même à l’appui d’une échelle.</p>
-          <a class="service-link" href="/pare-feuilles/">Protection pare-feuilles →</a>
+          <a class="service-link" href="/pare-feuilles/">Voir les pare-feuilles →</a>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="dark">
+  <section class="dark problem-section">
     <div class="container grid two">
       <div>
         <p class="eyebrow">Pourquoi agir maintenant</p>
@@ -52,47 +95,39 @@ import site from '../data/site.json';
         <p>Quand une gouttière déborde ou se déforme, l’eau ne disparaît pas : elle descend derrière le fascia, remonte sous les bardeaux, éclabousse le revêtement et s’accumule au pied des fondations. À Québec, les cycles de gel-dégel aggravent rapidement ces problèmes, car l’eau coincée prend de l’expansion, force les joints et crée des barrages de glace.</p>
         <p>La solution durable consiste à réduire les points faibles. Les gouttières en aluminium sans joints limitent les fuites, tandis que le système de crochets continus renforce toute la longueur de la gouttière. Les produits premium de type Alu-Rex T-Rex et DoublePro peuvent rendre le système 50 % plus robustes et supporter de 250 à 425 lb par pied linéaire selon la configuration.</p>
       </div>
-      <div class="plain-card">
-        <h3>Le bon système protège :</h3>
-        <ul class="feature-list">
-          <li>les fondations contre les accumulations d’eau répétées;</li>
-          <li>la toiture contre les infiltrations causées par la glace;</li>
-          <li>les fascias et soffites contre l’humidité persistante;</li>
-          <li>l’aménagement paysager contre les débordements;</li>
-          <li>la valeur de votre maison grâce à une durée de vie pouvant approcher près de 30 ans.</li>
-        </ul>
+      <div class="risk-panel orbital-card">
+        <div class="risk-item"><strong>Fondations</strong><span>Éloigne l’eau des zones sensibles autour de la maison.</span></div>
+        <div class="risk-item"><strong>Toiture</strong><span>Réduit les risques d’infiltrations causées par la glace.</span></div>
+        <div class="risk-item"><strong>Fascias</strong><span>Limite l’humidité persistante et le gauchissement.</span></div>
+        <div class="risk-item"><strong>Durabilité</strong><span>Durée de vie pouvant approcher près de 30 ans.</span></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container grid two">
+      <div class="process-timeline">
+        <div><span>01</span><strong>Diagnostic</strong><p>Toiture, pente, descentes, arbres, accumulation de neige.</p></div>
+        <div><span>02</span><strong>Fabrication</strong><p>Gouttières continues en aluminium 5 ou 6 pouces selon le besoin.</p></div>
+        <div><span>03</span><strong>Renforcement</strong><p>Système de crochets continus et pare-feuilles microfiltrants.</p></div>
+        <div><span>04</span><strong>Vérification</strong><p>Écoulement, finition, zones à risque et conseils d’entretien.</p></div>
+      </div>
       <div>
         <p class="eyebrow">Expérience et sécurité</p>
         <h2>Une installation impeccable par des professionnels certifiés et expérimentés</h2>
         <p>Une gouttière performante dépend autant du produit que de l’installation. Notre équipe travaille de façon méthodique : prise de mesures, fabrication continue, positionnement des descentes, pente d’écoulement, ancrage et inspection finale. Chaque détail vise une évacuation stable et une finition propre.</p>
         <p>Nous mettons l’accent sur la sécurité en hauteur, la protection de votre propriété et la durabilité du résultat. Vous obtenez une recommandation claire, sans pression, selon votre toiture, votre quartier, la présence d’arbres et l’exposition au vent.</p>
       </div>
-      <div class="card">
-        <h3>Produits recommandés pour Québec</h3>
-        <ul class="feature-list">
-          <li>Gouttières d’aluminium sans joints 5 et 6 pouces</li>
-          <li>Système de crochets continus pour limiter le gauchissement</li>
-          <li>Pare-feuilles microfiltrants Alu-Rex T-Rex et DoublePro</li>
-          <li>Capacité renforcée de 250 à 425 lb par pied linéaire</li>
-          <li>Conception adaptée à la neige, la glace et le gel-dégel</li>
-        </ul>
-      </div>
     </div>
   </section>
 
-  <section style="background: var(--soft);">
+  <section class="areas-section">
     <div class="container">
       <p class="eyebrow">Secteurs desservis</p>
       <h2>Gouttières à Québec, Lévis et dans les quartiers environnants</h2>
-      <p>Nous desservons les propriétaires de la grande région de Québec, incluant Lévis, Sainte-Foy, Beauport, Charlesbourg et la Rive-Sud, soit des secteurs résidentiels où la neige, le vent, les arbres matures et les redoux hivernaux mettent les gouttières à rude épreuve.</p>
-      <div class="areas">
-        {site.serviceAreas.map((area) => <span class="area-pill">{area}</span>)}
+      <p class="lead">Nous desservons les propriétaires de la grande région de Québec, incluant Lévis, Sainte-Foy, Beauport, Charlesbourg et la Rive-Sud, soit des secteurs résidentiels où la neige, le vent, les arbres matures et les redoux hivernaux mettent les gouttières à rude épreuve.</p>
+      <div class="area-grid">
+        {site.serviceAreas.map((area) => <span>{area}</span>)}
       </div>
     </div>
   </section>
@@ -109,4 +144,56 @@ import site from '../data/site.json';
       </div>
     </div>
   </section>
+
+  <style>
+    .modern-hero { padding-top: clamp(72px, 9vw, 132px); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .85fr); gap: clamp(36px, 7vw, 82px); align-items: center; }
+    .hero-copy h1 { margin-bottom: 24px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin: 32px 0 28px; }
+    .trust-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .trust-row span { border: 1px solid rgba(83,58,253,.16); background: rgba(255,255,255,.72); padding: 8px 12px; border-radius: 8px; color: var(--ink-2); font-weight: 800; box-shadow: rgba(23,23,23,.04) 0 8px 22px; }
+    .hero-visual { position: relative; min-height: 560px; }
+    .orbital-card { border: 1px solid rgba(255,255,255,.58); border-radius: 18px; background: var(--surface-glass); box-shadow: var(--shadow-premium); backdrop-filter: blur(20px) saturate(1.25); }
+    .main-gutter-card { position: absolute; inset: 24px 22px auto 0; padding: 28px; min-height: 368px; }
+    .main-gutter-card::before { content: ""; position: absolute; inset: 18px; border: 1px dashed rgba(83,58,253,.22); border-radius: 14px; pointer-events: none; }
+    .mini-roof { position: relative; height: 142px; border-radius: 16px; background: linear-gradient(145deg, #061b31, #1c1e54); overflow: hidden; color: white; padding: 22px; display: flex; align-items: end; }
+    .mini-roof span { position: absolute; left: -8%; right: -8%; top: 42px; height: 24px; transform: rotate(-8deg); background: linear-gradient(90deg, var(--teal-bright), var(--brand)); box-shadow: 0 18px 48px rgba(45,212,191,.35); }
+    .mini-roof strong { position: relative; z-index: 1; font-size: 1.25rem; }
+    .water-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+    .water-flow i { height: 9px; border-radius: 999px; background: linear-gradient(90deg, rgba(45,212,191,.2), var(--teal-bright), rgba(83,58,253,.5)); }
+    .metric-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .metric-card { padding: 18px; border-radius: 14px; border: 1px solid var(--line); background: white; }
+    .metric-card small { color: var(--muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; }
+    .metric-card strong { display: block; color: var(--ink); font-size: 2.25rem; line-height: 1; letter-spacing: -.05em; margin: 8px 0 4px; }
+    .metric-card span { color: var(--muted); font-size: .95rem; }
+    .climate-dashboard { position: absolute; right: 0; bottom: 36px; width: min(330px, 78%); padding: 22px; background: rgba(6,27,49,.88); color: white; }
+    .climate-dashboard p { color: rgba(255,255,255,.72); font-size: .98rem; margin-bottom: 0; }
+    .dashboard-head { display: flex; justify-content: space-between; gap: 10px; font-family: var(--font-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 20px; color: rgba(255,255,255,.68); }
+    .dashboard-head b { color: #99f6e4; }
+    .weather-bars { height: 116px; display: flex; align-items: end; gap: 10px; margin-bottom: 18px; }
+    .weather-bars i { flex: 1; border-radius: 8px 8px 2px 2px; background: linear-gradient(180deg, var(--teal-bright), var(--brand)); opacity: .9; }
+    .marquee-section { padding: 0 0 22px; }
+    .marquee-track.light { margin-top: 0; border: 1px solid rgba(229,237,245,.94); border-radius: 14px; padding: 14px 18px; background: rgba(255,255,255,.74); color: var(--muted); box-shadow: var(--shadow-soft); }
+    .section-heading { margin-bottom: 34px; }
+    .services-grid { align-items: stretch; }
+    .service-card { position: relative; min-height: 100%; padding: 28px; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.86); box-shadow: var(--shadow-soft); transition: transform .18s ease, box-shadow .18s ease; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-premium); }
+    .service-card.featured { background: linear-gradient(180deg, white, #f5f9ff); border-color: #d6d9fc; }
+    .service-number { display: inline-flex; margin-bottom: 24px; font-family: var(--font-mono); color: var(--brand); background: rgba(83,58,253,.08); border: 1px solid #d6d9fc; border-radius: 8px; padding: 5px 8px; }
+    .problem-section::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(0deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 46px 46px; mask-image: linear-gradient(to bottom, transparent, black 18%, black 70%, transparent); }
+    .risk-panel { padding: 18px; display: grid; gap: 12px; background: rgba(255,255,255,.1); }
+    .risk-item { padding: 18px; border-radius: 14px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); }
+    .risk-item strong { display: block; color: white; font-size: 1.2rem; margin-bottom: 4px; }
+    .risk-item span { color: rgba(255,255,255,.72); }
+    .process-timeline { display: grid; gap: 14px; }
+    .process-timeline div { display: grid; grid-template-columns: 54px 1fr; gap: 0 18px; padding: 20px; border-radius: 16px; background: white; border: 1px solid var(--line); box-shadow: rgba(23,23,23,.05) 0 12px 32px; }
+    .process-timeline span { grid-row: span 2; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; background: #061b31; color: white; font-family: var(--font-mono); }
+    .process-timeline strong { color: var(--ink); font-size: 1.2rem; }
+    .process-timeline p { margin: 4px 0 0; }
+    .areas-section { background: linear-gradient(180deg, rgba(246,249,252,.54), rgba(255,255,255,.9)); }
+    .area-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .area-grid span { padding: 16px; border-radius: 14px; border: 1px solid var(--line); background: white; color: var(--ink-2); font-weight: 900; box-shadow: rgba(23,23,23,.04) 0 10px 26px; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { min-height: 520px; } .area-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .metric-grid, .area-grid { grid-template-columns: 1fr; } .climate-dashboard { width: 92%; } }
+  </style>
 </BaseLayout>

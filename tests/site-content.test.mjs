@@ -107,6 +107,35 @@ test('shared layout is conversion-focused and avoids fake trust claims', () => {
   assert.doesNotMatch(layout, /avis|étoiles|Google|RBQ|assuré/i);
 });
 
+test('visual system feels premium and modern instead of generic template-like', () => {
+  const layout = read('src/layouts/BaseLayout.astro');
+  const home = read('src/pages/index.astro');
+  const serviceTemplate = read('src/pages/[slug].astro');
+
+  for (const token of [
+    '--surface-glass',
+    '--shadow-premium',
+    '--gradient-aurora',
+    'backdrop-filter',
+    'noise-overlay',
+    'orbital-card',
+    'metric-card',
+    'marquee-track',
+  ]) {
+    assert.match(layout + home, new RegExp(token), `${token} should be present in the visual system`);
+  }
+
+  assert.match(home, /hero-visual/);
+  assert.match(home, /climate-dashboard/);
+  assert.match(home, /service-card featured/);
+  assert.match(home, /process-timeline/);
+  assert.match(home, /area-grid/);
+  assert.match(serviceTemplate, /service-hero-visual/);
+  assert.match(serviceTemplate, /sticky-quote-card/);
+
+  assert.doesNotMatch(layout, /border-radius:\s*24px|border-radius:\s*30px/);
+});
+
 test('robots file points to quebec-gouttieres.ca sitemap', () => {
   const robots = read('public/robots.txt');
   assert.match(robots, /User-agent: \*/);

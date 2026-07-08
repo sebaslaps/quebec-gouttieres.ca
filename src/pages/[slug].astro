@@ -11,24 +11,36 @@ const { page } = Astro.props;
 const paragraphs = page.body.split('\n\n');
 ---
 <BaseLayout title={page.title} description={page.metaDescription} canonicalPath={`/${page.slug}/`}>
-  <section class="hero">
-    <div class="container">
-      <p class="eyebrow">Québec, Lévis et Rive-Sud</p>
-      <h1>{page.h1}</h1>
-      <p class="lead">{page.intro}</p>
-      <div class="hero-actions">
-        <a class="btn" href={`mailto:${site.email}?subject=${encodeURIComponent(page.cta)}`}>{page.cta}</a>
-        <a class="btn secondary" href="/#services">Tous les services</a>
+  <section class="service-hero">
+    <div class="container service-hero-grid">
+      <div>
+        <p class="eyebrow">Québec, Lévis et Rive-Sud</p>
+        <h1>{page.h1}</h1>
+        <p class="lead">{page.intro}</p>
+        <div class="hero-actions">
+          <a class="btn" href={`mailto:${site.email}?subject=${encodeURIComponent(page.cta)}`}>{page.cta}</a>
+          <a class="btn secondary" href="/#services">Tous les services</a>
+        </div>
+      </div>
+      <div class="service-hero-visual orbital-card" aria-label="Résumé de service">
+        <div class="visual-topline"><span>Protection résidentielle</span><b>Québec</b></div>
+        <div class="service-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="visual-metrics">
+          <div class="metric-card"><small>Climat</small><strong>Gel</strong><span>dégel répété</span></div>
+          <div class="metric-card"><small>Système</small><strong>Sans</strong><span>joints visibles</span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="container grid two" style="align-items:start;">
-      <article class="card">
-        {paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    <div class="container service-content-grid">
+      <article class="service-copy card">
+        {paragraphs.map((paragraph, index) => (
+          <p class={index === 0 ? 'opening-paragraph' : undefined}>{paragraph}</p>
+        ))}
       </article>
-      <aside class="plain-card">
+      <aside class="sticky-quote-card orbital-card">
         <p class="eyebrow">Solution recommandée</p>
         <h2>Un système complet, pas une réparation temporaire</h2>
         <ul class="feature-list">
@@ -38,6 +50,7 @@ const paragraphs = page.body.split('\n\n');
           <li>Installation sécuritaire par une équipe expérimentée</li>
           <li>Soumission gratuite dans la grande région de Québec</li>
         </ul>
+        <a class="btn" href={`mailto:${site.email}?subject=${encodeURIComponent(page.cta)}`}>{page.cta}</a>
       </aside>
     </div>
   </section>
@@ -54,4 +67,29 @@ const paragraphs = page.body.split('\n\n');
       </div>
     </div>
   </section>
+
+  <style>
+    .service-hero { padding-top: clamp(72px, 9vw, 124px); }
+    .service-hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .72fr); gap: clamp(32px, 7vw, 78px); align-items: center; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
+    .service-hero-visual { position: relative; min-height: 410px; padding: 26px; overflow: hidden; background: linear-gradient(160deg, rgba(255,255,255,.76), rgba(233,251,255,.82)); }
+    .service-hero-visual::before { content: ""; position: absolute; inset: -22% -28% auto auto; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(83,58,253,.26), transparent 66%); }
+    .visual-topline { display: flex; justify-content: space-between; gap: 14px; color: var(--muted); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; font-size: .75rem; }
+    .visual-topline b { color: var(--brand); }
+    .service-rings { position: relative; height: 220px; display: grid; place-items: center; }
+    .service-rings i { position: absolute; border-radius: 50%; border: 1px solid rgba(83,58,253,.18); }
+    .service-rings i:nth-child(1) { width: 210px; height: 210px; background: radial-gradient(circle, rgba(45,212,191,.26), transparent 58%); }
+    .service-rings i:nth-child(2) { width: 138px; height: 138px; border-color: rgba(45,212,191,.36); }
+    .service-rings i:nth-child(3) { width: 58px; height: 58px; background: linear-gradient(135deg, var(--brand), var(--teal-bright)); box-shadow: rgba(83,58,253,.34) 0 22px 44px -18px; }
+    .visual-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .service-content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 28px; align-items: start; }
+    .service-copy { padding: clamp(28px, 4vw, 48px); }
+    .service-copy p { font-size: 1.12rem; line-height: 1.72; }
+    .service-copy .opening-paragraph { color: var(--ink-2); font-size: 1.24rem; }
+    .sticky-quote-card { position: sticky; top: 96px; padding: 26px; }
+    .sticky-quote-card h2 { font-size: 2rem; }
+    .sticky-quote-card .btn { margin-top: 26px; width: 100%; }
+    @media (max-width: 960px) { .service-hero-grid, .service-content-grid { grid-template-columns: 1fr; } .sticky-quote-card { position: relative; top: 0; } }
+    @media (max-width: 560px) { .visual-metrics { grid-template-columns: 1fr; } }
+  </style>
 </BaseLayout>
